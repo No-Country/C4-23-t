@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Analytics = () => {
   return (
@@ -6,4 +6,4 @@ const Analytics = () => {
   )
 }
 
-export default Analytics
+export default Analytics;

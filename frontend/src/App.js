@@ -10,6 +10,6 @@ function App() {
       <Analytics />
     </div>
   );
-}
+};
 
 export default App;
