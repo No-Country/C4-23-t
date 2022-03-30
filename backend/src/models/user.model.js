@@ -4,8 +4,15 @@ import mongoose from 'mongoose';
 const userSchema = new mongoose.Schema({
     name: {
         type: mongoose.Schema.Types.String,
+        required: true,
+        maxlength: 100
+    },
+    lastname: {
+        type: mongoose.Schema.Types.String,
+        maxlength: 50,
         required: true
     },
+    
     email: {
         type: mongoose.Schema.Types.String,
         required: true
