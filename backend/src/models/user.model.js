@@ -29,6 +29,7 @@ const userSchema = new mongoose.Schema({
     },
     required: true,
   },
+
   dni: {
     type: mongoose.Schema.Types.Number,
     required: true,
