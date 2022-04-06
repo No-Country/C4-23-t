@@ -1,7 +1,10 @@
 import React from "react";
+import UserCard from "../Components/UserCard";
 
 const Nosotros = () => {
-  return <div>Nosotros</div>;
+  return (
+    <UserCard />
+  )
 };
 
 export default Nosotros;
