@@ -22,7 +22,6 @@ const UserCard = () => {
         </div>
       </div>
     </div>
-    
   )
 };
 
