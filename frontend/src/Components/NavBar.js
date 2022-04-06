@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-import image from "../assets/navbardos.png";
+import image from "../Assets/navbardos.png";
 
 const NavBar = () => {
   const [menu, setMenu] = useState(false);
@@ -33,21 +34,28 @@ const NavBar = () => {
             : "md:flex md:items-center flex justify-center items-center flex-col md:flex-row"
         }
       >
-        <li className="mx-8 my-6 md:my-0 text-xl">Home</li>
-        <li className="mx-8 my-6 md:my-0 text-xl">About Us</li>
-        <li className="mx-8 my-6 md:my-0 text-xl">Analytics</li>
-
+        <Link to={"/"}>
+          <li className="mx-8 my-6 md:my-0 text-xl">Home</li>
+        </Link>
+        <Link to={"/aboutUs"}>
+          <li className="mx-8 my-6 md:my-0 text-xl">About Us</li>
+        </Link>
+        <Link to={"/analytics"}>
+          <li className="mx-8 my-6 md:my-0 text-xl">Analytics</li>
+        </Link>
         <li className="md:left-7">
           <div className="  rounded-xl p-2 hidden md:inline">
             {/* {Ver que no se le puede dar clases al icono, hacerlo de color gris} */}
             <ion-icon name="moon-outline"></ion-icon>
           </div>
-          <button
-            className="bg-sky-600 text-white px-6 py-2 mx-8 rounded-xl
+          <Link to={"/userLogin"}>
+            <button
+              className="bg-sky-600 text-white px-6 py-2 mx-8 rounded-xl
         hover:bg-sky-700 transition-color"
-          >
-            Sign in
-          </button>
+            >
+              Sign in
+            </button>
+          </Link>
         </li>
       </ul>
     </nav>

@@ -6,18 +6,23 @@ import Analytics from "./Pages/Analytics";
 import Payments from "./Pages/Payments";
 import NavBar from "./Components/NavBar";
 import Home from "./Pages/Home";
+import Error from "./Pages/Error";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-<   div className="App">
+    <>
       <NavBar />
-      <Home />
-      <Nosotros />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/aboutUs" element={<Nosotros />} />
+        <Route path="/analytics" element={<Analytics />} />
+        <Route path="/userLogin" element={<User />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
       <UserAnalytics />
-      <User />
-      <Analytics />
       <Payments />
-    </div>
+    </>
   );
 }
 
