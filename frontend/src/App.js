@@ -8,6 +8,7 @@ import NavBar from "./Components/NavBar";
 import Home from "./Pages/Home";
 import Error from "./Pages/Error";
 import { Route, Routes } from "react-router-dom";
+import LoginForm from "./Pages/Login";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       </Routes>
       <UserAnalytics />
       <Payments />
+      <LoginForm />
     </>
   );
 }

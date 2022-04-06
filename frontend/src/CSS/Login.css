@@ -1,0 +1,87 @@
+.loginContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.loginWrapper {
+  width: 50%;
+  height: 275px;
+  background-color: #eee;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column(2);
+  justify-content: space-between;
+}
+
+.loginImageWrapper {
+  background: #4a88c4;
+  position: relative;
+  width: 45%;
+  border-radius: 15px;
+}
+
+.loginSkew {
+  background: #4a88c4;
+  transform: skew(-13deg);
+  width: 40%;
+  margin-left: 150px;
+  height: 100%;
+  box-shadow: 10px 0 15px -2px #888;
+  display: flex;
+  align-items: center;
+}
+
+.loginImageWrapper img {
+  z-index: 2;
+  height: auto;
+  transform: skew(13deg);
+  margin-left: -135px;
+  margin-bottom: 15px;
+  width: 250%;
+}
+
+.loginFormWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginForm {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-right: 28px;
+}
+
+.loginForm h1 {
+  color: #1A69B4;
+  font-weight: lighter;
+}
+
+.loginFormUser {
+  margin-top: 15px;
+  margin-bottom: 20px;
+} 
+
+.loginForm input {
+  border: hidden;
+  border-bottom: 1.4px solid;
+  border-color: #8d8d8d;
+  background: #eee;
+}
+
+.loginForm button {
+  margin-top: 40px;
+  width: 76px;
+  height: 30px;
+  background: #4a88c4;
+  color: #fdf5e6;
+  border: hidden;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.loginForm button:hover {
+  box-shadow: 2px 2px 5px 1px #000;
+  border: 1px solid #fdf5e6;
+}
