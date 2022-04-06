@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import image from "../assets/navbardos.png";
+import image from "../Assets/navbardos.png";
 
 const NavBar = () => {
   const [menu, setMenu] = useState(false);
@@ -10,7 +10,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="md:flex md:items-center md:justify-between text-sky-600  shadow ">
+    <nav className="md:flex md:items-center md:justify-between text-sky-600  shadow">
       <div className="">
         <img
           className="h-10 inline mx-2"
