@@ -26,4 +26,4 @@ const UserCard = () => {
   )
 };
 
-export default UserCard
+export default UserCard;
