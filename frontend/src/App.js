@@ -5,11 +5,13 @@ import User from "./Pages/User";
 import Analytics from "./Pages/Analytics";
 import Payments from "./Pages/Payments";
 import NavBar from "./Components/NavBar";
+import Home from "./Pages/Home";
 
 function App() {
   return (
-    <div>
+<   div className="App">
       <NavBar />
+      <Home />
       <Nosotros />
       <UserAnalytics />
       <User />
