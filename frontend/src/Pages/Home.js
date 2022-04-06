@@ -1,9 +1,9 @@
 import React from 'react'
 import TextImage from '../Components/TextImage'
-import img1 from '../Assets/pngegg.png'
-import img2 from '../Assets/securuty.png'
-import img3 from '../Assets/homeFoto.png'
-import img4 from '../Assets/dataAnalytics.png'
+import img1 from '../assets/pngegg.png'
+import img2 from '../assets/securuty.png'
+import img3 from '../assets/homeFoto.png'
+import img4 from '../assets/dataAnalytics.png'
 
 
 export default function Home() {
