@@ -4,6 +4,7 @@ import UserAnalytics from "./Pages/UserAnalytics";
 import User from "./Pages/User";
 import Analytics from "./Pages/Analytics";
 import Payments from "./Pages/Payments";
+import LoginForm from "./Pages/Login";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <User />
       <Analytics />
       <Payments />
+      <LoginForm />
     </div>
   );
 }
