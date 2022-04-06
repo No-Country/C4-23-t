@@ -6,12 +6,10 @@ import img3 from "../Assets/homeFoto.png";
 import img4 from "../Assets/dataAnalytics.png";
 
 export default function Home() {
-  const text1 = "NeoCoin la mejor manera de comprar cripto";
-  const text2 = "Crea tu propia billetera virtual con la mejor seguridad";
-  const text3 =
-    "Somos un equipo comprometido con garantizar la seguridad de tus criptos y para que tengas la mejor experiencia";
-  const text4 =
-    "Tenemos la mejor informacion del movimiento y cambio de la cripyo";
+  const text1 = "NeoCoin la mejor manera de comprar cripto"
+  const text2 = "Crea tu propia billetera virtual con la mejor seguridad"
+  const text3 = "Somos un equipo comprometido con garantizar la seguridad de tus criptos y para que tengas la mejor experiencia"
+  const text4 = "Tenemos la mejor informacion del movimiento y cambio del mercado de criptos"
   return (
     <div className="Home">
       <TextImage

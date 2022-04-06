@@ -1,4 +1,9 @@
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 *,
 *::before,
 *::after {
@@ -13,24 +18,11 @@
   --fw-reg: 150; /* Peso de la fuente regular. (cuan anchas son las letras)*/
   --fw-bold: 900; /* Peso de la fuente Bold o negrita. */
   /*El esquema de colores, es mejor usar variables, por si se decide cambiar el esquema solo hay que cambiarlo acá y no a traves del sitio. Si se usa Tailwind Hay que ver como implementarlo */
-  --clr-light: hsl(
-    0,
-    0%,
-    91%
-  ); /* Color claro. Personalmente prefiero hsl/hsla para formato de colores.*/
+  --clr-light: hsl(0, 0%, 98%); /* Color claro. Personalmente prefiero hsl/hsla para formato de colores.*/
   --clr-dark: hsl(240, 5%, 11%); /*Color oscuro*/
-  --clr-accent: hsla(336, 91%, 31%, 100%); /* Color principal o acento */
-  --clr-accentLessOpaque: hsla(
-    342,
-    /* Tono o Hue*/ 93%,
-    /* Saturación o Saturation */ 40%,
-    /* Brillo o Lightness */ 60% /* Alpha (transparencia) */
-  ); /*Version transparente del color principal */
-  --clr-accentEndPoint: hsl(
-    342,
-    93%,
-    40%
-  ); /* Color secundario. Aca coloqué una version mas clara del principal, cuando se decidan colores hay que cambiar el esquema */
+  --clr-accent: hsl(210, 51%, 53%); /* Color principal o acento */
+  --clr-accentLessOpaque: hsla(210, 51%, 53%, 60%);
+  --clr-accentEndPoint: hsl(210, 39%, 59%); /* Color secundario. Aca coloqué una version mas clara del principal, cuando se decidan colores hay que cambiar el esquema */
 
   /*Estos son las tipografias para pantalla chica. Quedan mejor si se achica un poco la letra para mejorar el responsiveness. Hay que ver si lo usamos */
   --fs-h1: 3rem;
@@ -43,7 +35,7 @@
 @media (min-width: 800px) {
   :root {
     --fs-h1: 4.5rem;
-    --fs-h2: 3.75rem;
+    --fs-h2: 2.5rem;
     --fs-h3: 1.5rem;
     --fs-body: 1.25rem;
   }
@@ -57,9 +49,7 @@ html {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -68,9 +58,90 @@ body {
   font-family: 'Inder', sans-serif;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-.moon {
-  fill: red;
+/* Navbar Style */
+
+/*Home Page Style*/
+
+.Home{
+  background-color: var(--clr-light);
+  overflow: hidden;
+}
+
+.textImage:first-of-type .textImage--textButton{
+    width: 50vw;
+}
+.textImage:first-of-type .textImage--img {
+  margin-right: -3em;
+  margin-top: -6em; 
+}
+/* .textImage:first-of-type {
+
+ 
+} */
+/* .textImage:first-of-type .textImage--img::after  {
+  content: " asdasdasd";
+  background: #ff0000;
+  height: 2000px;
+  z-index: 13;
+  width: 1000px;
+  display: inline-block;
+}
+ */
+
+
+/*TextImage Component Style*/
+
+.textImage {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin:0;
+  padding: 0.5em;
+}
+
+.textImage--img {
+  width: 50vw;
+  align-self: center;
+}
+
+.textImage--textButton{
+  text-align: center;
+  padding: 2em;
+}
+
+.textImage--text {
+  color: var(--clr-accent);
+  padding:1em;
+  font-size: var(--fs-h2);
+  text-align: center;
+
+}
+
+.textImage--button{
+  all: unset;
+  cursor: pointer;
+  display: inline-block;
+  padding: 1em 2em;
+  background-color: var(--clr-accent); 
+  color: var(--clr-light);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: var(--fw-bold);
+  transition: transform 200ms ease-in-out, box-shadow 400ms ease-in-out;
+  border-radius: 25px; 
+}
+
+.textImage--button:hover {
+  transform: scale(1.1);
+  box-shadow: var(--bs);
+
+}
+
+.textImage--button:focus {
+  outline: 3px solid var(--clr-accent);
+  outline-offset: 3px;
+  z-index: 30;
+  border-radius: 25px;
 }
