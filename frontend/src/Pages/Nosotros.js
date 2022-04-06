@@ -8,7 +8,6 @@ const Nosotros = () => {
       <SectionAboutUs />
       <UserCard />
     </div>
-
   )
 };
 
