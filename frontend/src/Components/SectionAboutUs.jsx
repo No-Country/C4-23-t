@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const SectionAboutUs = () => {
   return (
@@ -35,4 +35,4 @@ const SectionAboutUs = () => {
   )
 }
 
-export default SectionAboutUs
+export default SectionAboutUs;
