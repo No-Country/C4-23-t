@@ -17,13 +17,11 @@ const UserCard = () => {
             </h1>
           </div>
           <div className="text-center pt-0 pb-8 pl-8 items-center uppercase tracking-wider text-2xl text-[#1A69B4] font-semibold">
-          <div class="ml-10 mb-8 text-center uppercase tracking-wide text-xl text-[#1A69B4] font-semibold">
             CEO
           </div>
         </div>
       </div>
     </div>
-  </div>
     
   )
 };
