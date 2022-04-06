@@ -25,7 +25,6 @@ function App() {
       <Payments />
       <LoginForm />
     </>
-    </div>
   );
 }
 
