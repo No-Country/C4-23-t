@@ -1,13 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import UserCard from "../Components/UserCard";
 import imgSlider from "../Assets/imgSlider.png";
 import { ArrowForwardIcon, ArrowBackIcon } from "@chakra-ui/icons";
 
 export default function SliderCard() {
   const [next, setNext] = useState(true);
+  // cada 4 segundos cambia el valor next
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setNext(!next);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [next]);
+
   const changeNext = () => {
     setNext(!next);
   };
+
   return (
     <section>
       <div className="w-full relative flex justify-center items-center my-5 sm:py-10  ">
