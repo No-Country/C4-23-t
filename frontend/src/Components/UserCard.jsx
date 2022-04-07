@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-const UserCard = () => {
+const UserCard = ({ puesto }) => {
   return (
     //UserCard
     <div className="max-w-sm mx-auto sm:max-w-auto md:max-w-auto lg:max-w-auto xl:max-w-auto sm:h-auto md:h-auto">
@@ -17,12 +17,12 @@ const UserCard = () => {
             </h1>
           </div>
           <div className="text-center pt-0 pb-8 pl-8 items-center uppercase tracking-wider text-2xl text-[#1A69B4] font-semibold">
-            CEO
+            {puesto}
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 };
 
 export default UserCard;
