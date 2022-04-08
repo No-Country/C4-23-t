@@ -6,6 +6,8 @@ import Home from "./Pages/Home";
 import Error from "./Pages/Error";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./Components/Layout";
+import Login from "./Pages/Login"
+import Register from "./Pages/Register"
 
 function App() {
   return (
@@ -14,7 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/aboutUs" element={<Nosotros />} />
         <Route path="/analytics" element={<Analytics />} />
-        <Route path="/userLogin" element={<User />} />
+        <Route path="/userLogin" element={<Login />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </Layout>

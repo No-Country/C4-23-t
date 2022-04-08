@@ -1,4 +1,5 @@
 import Input from "./Input";
+import Date from "./Date"
 
 const FormControl = (props) => {
   const { control, ...rest } = props;
@@ -10,6 +11,7 @@ const FormControl = (props) => {
     case "radio":
     case "checkbox":
     case "date":
+      return <Date {...rest} />
     default:
       return null;
   }
