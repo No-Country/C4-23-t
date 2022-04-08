@@ -1,14 +1,14 @@
 import React from "react";
 import SectionAboutUs from "../Components/SectionAboutUs";
-import UserCard from "../Components/UserCard";
+import SliderCard from "../Components/SliderCard";
 
 const Nosotros = () => {
   return (
     <div>
       <SectionAboutUs />
-      <UserCard />
+      <SliderCard />
     </div>
-  )
+  );
 };
 
 export default Nosotros;
