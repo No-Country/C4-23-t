@@ -1,10 +1,17 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const cors = require("cors");
+// const express = require("express");
+// const mongoose = require("mongoose");
+// const cors = require("cors");
+import express from "express";
+import mongoose from "mongoose";
+import cors from "cors";
+import connectDb from "./config/db.js";
 
 // Creating express app
 const app = express();
 app.use(cors());
+
+// connect to the Db
+connectDb();
 
 const port = 4000;
 app.get("/", (req, res) => {
