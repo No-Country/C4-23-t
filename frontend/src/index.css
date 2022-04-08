@@ -12,9 +12,6 @@
 
 /* Opciones personalizadas de estilo*/
 :root {
-  /* --ff-primary: "Titillium Web", sans-serif;*/ /*  Fuente primaria, hay que decidir que fuente vamos a utilizar y agregarla, luego activar esta linea de código y la de abajo */
-  /* --ff-secondary: "Source Code Pro", monospace;*/ /* Fuente secundaria */
-
   --fw-reg: 150; /* Peso de la fuente regular. (cuan anchas son las letras)*/
   --fw-bold: 900; /* Peso de la fuente Bold o negrita. */
   /*El esquema de colores, es mejor usar variables, por si se decide cambiar el esquema solo hay que cambiarlo acá y no a traves del sitio. Si se usa Tailwind Hay que ver como implementarlo */
@@ -27,6 +24,7 @@
   /*Estos son las tipografias para pantalla chica. Quedan mejor si se achica un poco la letra para mejorar el responsiveness. Hay que ver si lo usamos */
   --fs-h1: 3rem;
   --fs-h2: 2.25rem;
+  --fs-h2b: 1.75rem;
   --fs-h3: 1.25rem;
   --fs-body: 1rem;
   --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.726); /* Variable general para box shadow.*/
@@ -36,6 +34,7 @@
   :root {
     --fs-h1: 4.5rem;
     --fs-h2: 2.5rem;
+    --fs-h2b: 1.75rem;
     --fs-h3: 1.5rem;
     --fs-body: 1.25rem;
   }

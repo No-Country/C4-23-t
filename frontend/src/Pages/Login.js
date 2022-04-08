@@ -6,9 +6,7 @@ import NavBar from "../Components/NavBar";
 const Login = () => {
   return (
     <div>
-      <NavBar />
       <LoginForm />
-      <Footer />
     </div>
   );
 };
