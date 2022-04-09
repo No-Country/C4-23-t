@@ -1,4 +1,5 @@
 import React from "react"
+import "../CSS/TextImage.css"
 
 
 export default function TextImage(props) {

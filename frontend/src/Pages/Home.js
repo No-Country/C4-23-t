@@ -1,5 +1,6 @@
 import React from 'react'
 import TextImage from '../Components/TextImage'
+import "../CSS/Home.css"
 import img1 from '../Assets/pngegg.png'
 import img2 from '../Assets/securuty.png'
 import img3 from '../Assets/homeFoto.png'
