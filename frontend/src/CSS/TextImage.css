@@ -1,17 +1,6 @@
-/* .textImage:first-of-type .textImage--img::after  {
-  content: " asdasdasd";
-  background: #ff0000;
-  height: 2000px;
-  z-index: 13;
-  width: 1000px;
-  display: inline-block;
-}
- */
 
 
 /*TextImage Component Style*/
-
-
 
 .textImage--button{
     all: unset;
@@ -47,6 +36,7 @@
     justify-content: space-around;
     margin:0;
     padding: 0.5em;
+    position: relative;
     }
 
 .textImage--imgRight{
@@ -90,6 +80,9 @@
     padding: 0.5em;
   }
   
+
+
+
 
   
 }

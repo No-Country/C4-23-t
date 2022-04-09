@@ -11,14 +11,14 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="md:flex md:items-center md:justify-between text-sky-600  shadow">
+    <nav className="md:flex md:items-center md:justify-between text-sky-600 nav">
       <div className="">
         <img
           className="h-10 inline mx-2"
           src={image}
           alt="Imagenes Criptomonedas"
         />
-        <h4 className="text-xs mx-10 ">CRYPTOCURRENCY EXCHANGE</h4>
+        <h4 className="text-xs mx-10 navBar-logoSubtitle">CRYPTOCURRENCY EXCHANGE</h4>
         <span
           onClick={seeMenu}
           className="cursor-pointer text-3xl md:hidden block text-center absolute top-0 right-3"
@@ -35,7 +35,7 @@ const NavBar = () => {
         }
       >
         <Link to={"/"}>
-          <li className="mx-8 my-6 md:my-0 text-xl">Home</li>
+          <li className="mx-8 my-6 md:my-0 text-xl homeLink">Home</li>
         </Link>
         <Link to={"/aboutUs"}>
           <li className="mx-8 my-6 md:my-0 text-xl">About Us</li>

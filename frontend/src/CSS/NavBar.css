@@ -1,0 +1,12 @@
+.nav{
+    z-index: 2;
+    background-color: var(--clr-light);
+}
+
+.navBar-logoSubtitle{
+    margin-right: 0;
+}
+
+.homeLink {
+    margin-left:0
+}
