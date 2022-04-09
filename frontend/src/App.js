@@ -1,27 +1,19 @@
 import "./App.css";
-import Nosotros from "./Pages/Nosotros";
-import User from "./Pages/User";
-import Analytics from "./Pages/Analytics";
-import Home from "./Pages/Home";
-import Error from "./Pages/Error";
+import PublicRouter from "./Routes/PublicRouter";
+import PrivateRouter from "./Routes/PrivateRouter";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./Components/Layout";
-import Login from "./Pages/Login"
-import Register from "./Pages/Register"
+import Register from "./Pages/Register";
 
 function App() {
   return (
-    <Layout >
+    <Layout>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/aboutUs" element={<Nosotros />} />
-        <Route path="/analytics" element={<Analytics />} />
-        <Route path="/userLogin" element={<Login />} />
-        <Route path="*" element={<Error />} />
+        <Route path="*" element={<PublicRouter />} />
+        <Route path="/private/*" element={<PrivateRouter />} />
       </Routes>
     </Layout>
-
   );
-};
+}
 
 export default App;
