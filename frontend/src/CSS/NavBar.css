@@ -1,12 +1,36 @@
-.nav{
+.nav {
     z-index: 2;
     background-color: var(--clr-light);
 }
 
 .navBar-logoSubtitle{
+    padding-right: 3em;
     margin-right: 0;
 }
 
-.homeLink {
-    margin-left:0
+.navLink {
+    padding-inline: 0;
+    margin-inline: 0.6em;
+    font-size: var(--fs-h3);
+}
+
+.moon {
+height: 50;
+}
+
+
+@media (max-width:800px){
+    .smallScreenNav {
+    width: 100vw;
+    height: 100vh;
+    }
+
+    .navLink {
+        font-size: var(--fs-h1);
+    }
+
+    .navButton {
+        font-size: var(--fs-h1);
+        margin-bottom: 1em;
+    }
 }
