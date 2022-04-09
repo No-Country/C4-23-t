@@ -4,7 +4,7 @@ import "../CSS/NavBar.css"
 import image from "../Assets/navbardos.png";
 
 const NavBar = () => {
-  const [menu, setMenu] = useState(false);
+  const [menu, setMenu] = useState(true);
 
   const seeMenu = () => {
     setMenu(!menu);
