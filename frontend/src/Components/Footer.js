@@ -1,4 +1,4 @@
-import logo from "../Images/neocoin_logo.png";
+import logo from "../Assets/neocoin_logo.png";
 import "../CSS/Footer.css";
 
 const Footer = () => {

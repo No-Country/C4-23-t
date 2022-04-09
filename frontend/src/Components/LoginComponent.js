@@ -2,7 +2,7 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import FormControl from "./Forms/FormControl";
 import "../CSS/LoginComponent.css";
-import loginBanner from "../Images/login_banner.png";
+import loginBanner from "../Assets/login_banner.png";
 
 const LoginForm = () => {
   const initialValues = {
