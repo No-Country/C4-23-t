@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
+import SearchCoin from "../Components/SearchCoin";
 
-const Analytics = () => {
+export default function Analytics() {
   return (
-    <div>Analytics</div>
-  )
+    <div>
+      <SearchCoin />
+    </div>
+  );
 }
-
-export default Analytics;
