@@ -1,0 +1,15 @@
+.userHeader {
+    display: flex;
+    flex-direction: row;
+    font-size: var(--fs-h2);
+    background-color: var(--clr-light);
+    color: var(--clr-accent);
+    padding-inline: 0.5em 3em;
+    padding-top: 0.5em;
+    gap: 0.5em;
+    align-items: center;
+}
+
+.messageLogo{
+    margin-left: auto;
+}
