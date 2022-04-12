@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import image from "../../Assets/neocoin_logo.png";
 import home from "../../Assets/Icon1.svg";
 import wallet from "../../Assets/Wallet.svg";
@@ -7,11 +7,20 @@ import profile from "../../Assets/profile.svg";
 import seetings from "../../Assets/setting.svg";
 import logout from "../../Assets/logout.svg";
 import styles from "./Sidebar.module.css";
+
+
+
 const Sidebar = () => {
+  const [menu, setMenu] = useState(true);
+
+  const seeMenu = () => {
+    setMenu(!menu);
+  };
   return (
     <>
-      <nav className={styles.sidebar}>
+      <nav className={menu?styles.sidebarIn:styles.sidebarOut}>
         <div className={styles.image}>
+          <div className={styles.hamburger} onClick={seeMenu}>p</div>
           <img className="imageLogo" src={image} alt="Imagenes Criptomonedas" />
         </div>
 
