@@ -114,5 +114,6 @@
 }
 
 .formError {
+  font-size: 7px;
   color: red;
 }
