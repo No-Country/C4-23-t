@@ -20,6 +20,7 @@
   --clr-accent: hsl(210, 51%, 53%); /* Color principal o acento */
   --clr-accentLessOpaque: hsla(210, 51%, 53%, 60%);
   --clr-accentEndPoint: hsl(210, 39%, 59%); /* Color secundario. Aca coloqué una version mas clara del principal, cuando se decidan colores hay que cambiar el esquema */
+  --clr-gray: #EEEEEE;
 
   /*Estos son las tipografias para pantalla chica. Quedan mejor si se achica un poco la letra para mejorar el responsiveness. Hay que ver si lo usamos */
   --fs-h1: 3rem;
@@ -52,6 +53,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: var(--clr-light);
+  width: 100vw;
 }
 
 * {
