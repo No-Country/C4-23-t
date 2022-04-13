@@ -1,0 +1,37 @@
+
+
+.UserCardHome {
+    background-color: var(--clr-gray);
+    border-radius: 25px;
+    display: inline-block;
+    direction: column;
+    padding: 2em;
+    min-width: 20em;
+    min-height: 15em;
+    position: relative;
+}
+
+.userCardTitle {
+    font-size: var(--fs-h2);
+}
+
+.userCardContainer {
+    display: flex;
+    direction: row;
+    justify-content: space-between;
+}
+
+.userCardPrice{
+    font-size: var(--fs-h2b);
+}
+.userCardVariation {
+    border-radius: 25px;
+    background-color: #00B300;
+    padding-inline: 0.25em;
+    color: var(--clr-light);
+}
+
+.graphic {
+    width: 100%;
+
+}
