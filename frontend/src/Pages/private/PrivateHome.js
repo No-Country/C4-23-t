@@ -2,8 +2,9 @@ import logoHome from "../../Assets/logoHome.svg";
 import "../../CSS/PrivateHome.css";
 import UserHomeCard from "../../Components/UserHomeCard";
 import demoGraphic from "../../Assets/DemoGraphic.svg"
-
+import useTitle from '../../Utils/useTitle'
 const PrivateHome = () => {
+  useTitle("Home")
   return (
     <div className="PrivateHome">
       <h3 className="privateHomeTitle">Tendencias</h3>

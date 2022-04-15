@@ -10,7 +10,7 @@ const UserLayout = ({ children }) => {
             <Sidebar />
         </div>
         <div className="userLayoutNavBar">
-            <UserNavBar />
+            <UserNavBar title={document.title}/>
             {children}
         </div>
     </div>
