@@ -5,9 +5,8 @@
     border-radius: 25px;
     display: inline-block;
     direction: column;
-    padding: 2em;
-    min-width: 20em;
-    min-height: 15em;
+    padding: 3%;
+    min-width: 25%;
     position: relative;
 }
 

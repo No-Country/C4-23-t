@@ -1,41 +1,24 @@
-:root {
-  --clr-accentEndPoint: hsl(210, 39%, 59%);
-}
-* {
-  box-sizing: border-box;
-  margin: 0px;
-  padding: 0px;
-}
+
 
 .sidebar {
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
-  width: 20vw;
+  width: 15em;
   background-color: #dcdcdc;
   display: flex;
   flex-direction: column;
-}
-.sidebar .image .img {
-  width: 50px;
-}
-.image {
-  margin-bottom: 40px;
   padding: 1em;
+  padding-right: 2em;
 }
 
-.title {
-  color: #87ceeb;
-  font-size: 13px;
-  text-align: center;
+.image {
+  margin-bottom: 2em;
+  align-self: center;
 }
-.elementSidebar {
-  margin-left: 10px;
-}
-.home {
-  margin-bottom: 20px;
-}
+
+
 .menuSidebar {
   display: flex;
   flex-direction: column;
@@ -44,8 +27,9 @@
 .menuSidebar li {
   display: flex;
   flex-direction: row;
-  margin-left: 2em;
   gap: 1em;
+  font-size: var(--fs-body);
+  padding-left: 1em;
 }
 
 .menuSidebar li h4 {

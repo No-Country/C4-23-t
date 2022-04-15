@@ -1,6 +1,6 @@
 import React from 'react';
 import UserNavBar from "./UserNavBar"
-import Sidebar from "./Sidebar/index.js"
+import Sidebar from "./Sidebar.js"
 import "../CSS/UserLayout.css"
 
 const UserLayout = ({ children }) => {
@@ -10,7 +10,7 @@ const UserLayout = ({ children }) => {
             <Sidebar />
         </div>
         <div className="userLayoutNavBar">
-            <UserNavBar />
+            <UserNavBar title={document.title}/>
             {children}
         </div>
     </div>
