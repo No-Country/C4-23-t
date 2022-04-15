@@ -1,5 +1,6 @@
-import bcrypt from "bcrypt";
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -19,14 +20,13 @@ const userSchema = new mongoose.Schema({
   },
   bithdate: {
     type: mongoose.Schema.Types.Date,
-    required: true,
+    required: false,
   },
 
   password: {
     type: mongoose.Schema.Types.String,
-    set: (value) => {
-      return bcrypt.hashSync(value, 10);
-    },
+    minlength: 8,
+    maxlength: 1024,
     required: true,
   },
 
