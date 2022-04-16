@@ -1,10 +1,16 @@
 import React from 'react'
-import SwapSections from '../Components/SwapSections'
+import GraphicSwap from '../Components/Swap/GraphicSwap'
+import SwapCard from '../Components/Swap/SwapCard'
+import UserLayout from '../Components/UserLayout'
 
 const Swap = () => {
   return (
-
-    <SwapSections />
+    <UserLayout>
+    <div className='md:flex flex-row gap-[1%]'  >
+    <GraphicSwap />
+    <SwapCard />
+    </div>
+    </UserLayout>
   )
 }
 
