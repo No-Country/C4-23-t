@@ -31,22 +31,21 @@ export default function Home() {
         button="WALLET"
         link="#WALLET"
       />
-      <Link to={"/aboutUs"}>
-        <TextImage
-          img={img3}
-          text={text3}
-          isImgLeft={false}
-          button="CONOCE A NUESTRO EQUIPO"
-          link="#NOSOTROS"
-        />
-      </Link>
+
+      <TextImage
+        img={img3}
+        text={text3}
+        isImgLeft={false}
+        button="CONOCE A NUESTRO EQUIPO"
+        link="/aboutUs"
+      />
 
       <TextImage
         img={img4}
         text={text4}
         isImgLeft={true}
         button="ANALITYCS"
-        link="#ANALITYCS"
+        link="analytics"
       />
     </div>
   );
