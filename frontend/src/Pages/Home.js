@@ -1,17 +1,19 @@
-import React from 'react'
-import TextImage from '../Components/TextImage'
-import "../CSS/Home.css"
-import img1 from '../Assets/pngegg.png'
-import img2 from '../Assets/securuty.png'
-import img3 from '../Assets/homeFoto.png'
-import img4 from '../Assets/dataAnalytics.png'
-
+import React from "react";
+import TextImage from "../Components/TextImage";
+import "../CSS/Home.css";
+import img1 from "../Assets/pngegg.png";
+import img2 from "../Assets/securuty.png";
+import img3 from "../Assets/homeFoto.png";
+import img4 from "../Assets/dataAnalytics.png";
+import { Link } from "react-router-dom";
 
 export default function Home() {
-const text1 = "NeoCoin la mejor manera de comprar cripto"
-const text2 = "Crea tu propia billetera virtual con la mejor seguridad"
-const text3 = "Somos un equipo comprometido con garantizar la seguridad de tus criptos y para que tengas la mejor experiencia"
-const text4 = "Tenemos la mejor informacion del movimiento y cambio del mercado de criptos"
+  const text1 = "NeoCoin la mejor manera de comprar cripto";
+  const text2 = "Crea tu propia billetera virtual con la mejor seguridad";
+  const text3 =
+    "Somos un equipo comprometido con garantizar la seguridad de tus criptos y para que tengas la mejor experiencia";
+  const text4 =
+    "Tenemos la mejor informacion del movimiento y cambio del mercado de criptos";
 
   return (
     <div className="Home">
@@ -29,13 +31,16 @@ const text4 = "Tenemos la mejor informacion del movimiento y cambio del mercado 
         button="WALLET"
         link="#WALLET"
       />
-      <TextImage
-        img={img3}
-        text={text3}
-        isImgLeft={false}
-        button="CONOCE A NUESTRO EQUIPO"
-        link="#NOSOTROS"
-      />
+      <Link to={"/aboutUs"}>
+        <TextImage
+          img={img3}
+          text={text3}
+          isImgLeft={false}
+          button="CONOCE A NUESTRO EQUIPO"
+          link="#NOSOTROS"
+        />
+      </Link>
+
       <TextImage
         img={img4}
         text={text4}

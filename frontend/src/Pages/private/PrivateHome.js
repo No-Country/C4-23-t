@@ -1,17 +1,33 @@
 import logoHome from "../../Assets/logoHome.svg";
 import "../../CSS/PrivateHome.css";
 import UserHomeCard from "../../Components/UserHomeCard";
-import demoGraphic from "../../Assets/DemoGraphic.svg"
-import useTitle from '../../Utils/useTitle'
+import demoGraphic from "../../Assets/DemoGraphic.svg";
+import useTitle from "../../Utils/useTitle";
+
 const PrivateHome = () => {
-  useTitle("Home")
+  useTitle("Home");
   return (
     <div className="PrivateHome">
       <h3 className="privateHomeTitle">Tendencias</h3>
       <div className="privateHomeContainer">
-        <UserHomeCard cryptoCoin="Bitcoin" price="1000.121" variation="26" graphic={demoGraphic}/>
-        <UserHomeCard cryptoCoin="Bitcoin" price="1000.121" variation="26" graphic={demoGraphic}/>
-        <UserHomeCard cryptoCoin="Bitcoin" price="1000.121" variation="26" graphic={demoGraphic}/>
+        <UserHomeCard
+          cryptoCoin="Bitcoin"
+          price="1000.121"
+          variation="26"
+          graphic={demoGraphic}
+        />
+        <UserHomeCard
+          cryptoCoin="Bitcoin"
+          price="1000.121"
+          variation="26"
+          graphic={demoGraphic}
+        />
+        <UserHomeCard
+          cryptoCoin="Bitcoin"
+          price="1000.121"
+          variation="26"
+          graphic={demoGraphic}
+        />
       </div>
       <h3 className="title">Noticias</h3>
       <h4 className="subtitle">Proximamente......</h4>
