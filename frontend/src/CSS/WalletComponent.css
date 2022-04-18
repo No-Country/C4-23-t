@@ -1,0 +1,9 @@
+.walletCoinColumn {
+  display: flex;
+  flex-direction: row;
+  width:fit-content
+}
+
+.walletCoinColumn img {
+  transform: scale(0.3);
+}
