@@ -1,6 +1,7 @@
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import FormControl from "./Forms/FormControl";
+import { Link } from "react-router-dom";
 import "../CSS/LoginComponent.css";
 import loginBanner from "../Assets/login_banner.png";
 
@@ -20,51 +21,58 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="loginComponentSize">
-      <div className="loginContainer">
-        <div className="loginWrapper">
-          <div className="loginImageWrapper">
-            <div className="loginSkew">
-              <img src={loginBanner} alt="Banner for login" />
+    <>
+      <div className="loginComponentSize">
+        <div className="loginContainer">
+          <div className="login-register">
+            <div className="loginWrapper">
+              <div className="loginImageWrapper">
+                <div className="loginSkew">
+                  <img src={loginBanner} alt="Banner for login" />
+                </div>
+              </div>
+              <div className="loginFormWrapper">
+                <div className="loginForm">
+                  <h1>Login</h1>
+                  <Formik
+                    initialValues={initialValues}
+                    validationSchema={validationSchema}
+                    onSubmit={onSubmit}
+                  >
+                    {(formik) => {
+                      return (
+                        <Form>
+                          <FormControl
+                            className="loginFormUser"
+                            control="input"
+                            type="Text"
+                            name="username"
+                            placeholder="Username"
+                          />
+                          <FormControl
+                            className="loginFormPass"
+                            control="input"
+                            type="password"
+                            name="password"
+                            placeholder="Password"
+                          />
+                          <button type="submit" disabled={!formik.isValid}>
+                            Login
+                          </button>
+                        </Form>
+                      );
+                    }}
+                  </Formik>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="loginFormWrapper">
-            <div className="loginForm">
-              <h1>Login</h1>
-              <Formik
-                initialValues={initialValues}
-                validationSchema={validationSchema}
-                onSubmit={onSubmit}
-              >
-                {(formik) => {
-                  return (
-                    <Form>
-                      <FormControl
-                        className="loginFormUser"
-                        control="input"
-                        type="Text"
-                        name="username"
-                        placeholder="Username"
-                      />
-                      <FormControl
-                        className="loginFormPass"
-                        control="input"
-                        type="password"
-                        name="password"
-                        placeholder="Password"
-                      />
-                      <button type="submit" disabled={!formik.isValid}>
-                        Login
-                      </button>
-                    </Form>
-                  );
-                }}
-              </Formik>
-            </div>
+            <Link className="register-nav" to="/register">
+              ¿ No tienes una cuenta? Registrate
+            </Link>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
