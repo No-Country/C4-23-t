@@ -5,8 +5,8 @@ import '../../CSS/GraphicSwap.css'
 
 const GraphicSwap = () => {
   return (
-  <aside className='containerP'  >
-  <div className='containerO'>
+    <aside className='containerP'  >
+      <div className='containerO'>
 
         <section className='sectionCoinsCompare'>
           <img src={imgBTC} alt='BTC-icon'  />

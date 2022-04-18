@@ -1,9 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import '../../CSS/SwapCard.css'
+import imgBTC from '../../Assets/btc-icon.svg'
 
 const SwapCard = () => {
-  const [val, setVal] = useState();
-  const [valConvert, setValConvert] = useState();
+  /*const [coins, setCoins] = useState([]);
+  const [search, setSearch] = useState("");
+
+  const getData = async () => {
+    try {
+      const res = await axios.get(
+        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=5&page=1&sparkline=false"
+      );
+      setCoins(res.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  console.log(coins);*/
+
+
+  const [val, setVal] = useState("");
+  const [valConvert, setValConvert] = useState("");
 
     return (
       <section className='container1st' >
@@ -19,9 +42,9 @@ const SwapCard = () => {
 
                 <section className='sectionCoinButton' >
                   <button className='hover:opacity-50 active:animate-bounce'>
-                    <img src={'https://img.icons8.com/color/344/4a90e2/tether--v2.png'} alt='USDT-Tether' />
-                    <h2>USDT</h2>
-                    <img  src={"https://upload.wikimedia.org/wikipedia/commons/9/9d/Arrow-down.svg"} alt='down-arrow' />
+                    <img src={imgBTC} alt='' />
+                    <h2>BTC</h2>
+                    <img src={"https://upload.wikimedia.org/wikipedia/commons/9/9d/Arrow-down.svg"} alt='down-arrow' />
                   </button>
                 </section>
 
@@ -30,7 +53,7 @@ const SwapCard = () => {
                   <input 
                   type="text" 
                   name='amount'
-                  inputmode='decimal'
+                  inputMode='decimal'
                   pattern='^[0-9]*[.,]?[0-9]*$'
                   autoComplete='off'
                   placeholder="0.0"
@@ -43,15 +66,15 @@ const SwapCard = () => {
                 </section>
 
                 <section className='sectionButtonInvert'>
-                  <button className="hover:bg-[#4A88C4] active:bg-[#1A69B4] active:animate-bounce border-solid border-transparent bg-[#C4C4C4]">
+                  <button id='buttonList' className="hover:bg-[#4A88C4] active:bg-[#1A69B4] active:animate-bounce border-solid border-transparent bg-[#C4C4C4]">
                     <i className='fas fa-arrow-down'></i>
                   </button>
                 </section>
 
                 <section className='sectionCoinButton' >
                   <button className='hover:opacity-50 active:animate-bounce'>
-                    <img src={"https://images.vexels.com/media/users/3/144837/isolated/lists/40f189daa5c0279718484ca5f5569f78-icono-de-bitcoin.png"} alt='BTC-Bitcoin' />
-                    <h2>BTC</h2>
+                    <img src={''} alt='' />
+                    <h2>{}</h2>
                     <img src={"https://upload.wikimedia.org/wikipedia/commons/9/9d/Arrow-down.svg"} alt='down-arrow' />
                   </button>
                 </section>
