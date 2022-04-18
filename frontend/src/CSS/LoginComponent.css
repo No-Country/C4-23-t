@@ -9,6 +9,10 @@
   display: flex;
   justify-content: center;
 }
+.login-register {
+  display: flex;
+  flex-direction: column;
+}
 
 .loginWrapper {
   width: 505px;
@@ -75,14 +79,14 @@
 
 .loginForm h1 {
   font-size: 1.25rem;
-  color: #1A69B4;
+  color: #1a69b4;
   font-weight: lighter;
   margin-left: 60px;
 }
 
 .loginFormUser {
   margin-top: 15px;
-} 
+}
 
 .loginFormPass {
   margin-top: 20px;
@@ -110,10 +114,13 @@
 }
 
 .loginForm button:hover {
-  background: #0369A1;
+  background: #0369a1;
 }
 
 .formError {
   font-size: 7px;
   color: red;
+}
+.register-nav {
+  color: #0369a1;
 }

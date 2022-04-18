@@ -3,8 +3,6 @@ import PublicRouter from "./Routes/PublicRouter";
 import PrivateRouter from "./Routes/PrivateRouter";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Register from "./Pages/Register";
-
 function App() {
   return (
     <>
