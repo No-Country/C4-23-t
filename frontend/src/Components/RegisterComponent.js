@@ -3,7 +3,7 @@ import * as Yup from "yup";
 import FormControl from "../Components/Forms/FormControl";
 import "../CSS/Register.css";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { signUp } from "../store/actions/authActions";
 
 const RegisterForm = () => {
@@ -51,7 +51,7 @@ const RegisterForm = () => {
     dispatch(signUp(values));
   };
 
-  if (auth._id) return navigate("/private/");
+  if (auth.token) return <Navigate to="/private/" />;
 
   return (
     <div className="registerMain">

@@ -3,9 +3,15 @@ import "../../CSS/PrivateHome.css";
 import UserHomeCard from "../../Components/UserHomeCard";
 import demoGraphic from "../../Assets/DemoGraphic.svg";
 import useTitle from "../../Utils/useTitle";
+import { Navigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const PrivateHome = () => {
   useTitle("Home");
+
+  const auth = useSelector((state) => state.auth);
+  if (auth.token == null) return <Navigate to="/userLogin" />;
+
   return (
     <div className="PrivateHome">
       <h3 className="privateHomeTitle">Tendencias</h3>

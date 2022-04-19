@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 import { signIn } from "../store/actions/authActions";
 
 //hacemos un SingIn  donde cuando este registrado lo lleva directamente a cargar una jornada
@@ -20,7 +20,7 @@ const LoginComponentAl = () => {
     setCreds({ email: "", password: "" });
   };
 
-  if (auth._id) return navigate("/private/");
+  if (auth.token) return <Navigate to="/private/" />;
 
   return (
     <>
