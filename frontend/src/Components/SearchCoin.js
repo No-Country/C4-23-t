@@ -12,6 +12,25 @@ const SearchCoin = () => {
       );
       setCoins(res.data);
       console.log(res.data);
+      const options = {
+        method: "GET",
+        url: "https://investing-cryptocurrency-markets.p.rapidapi.com/coins/search",
+        params: { string: "bit", time_utc_offset: "28800", lang_ID: "1" },
+        headers: {
+          "X-RapidAPI-Host": "investing-cryptocurrency-markets.p.rapidapi.com",
+          "X-RapidAPI-Key":
+            "dcfa1cdcfdmsh91fd95a9752ef5bp147594jsneb236564b0b1",
+        },
+      };
+
+      axios
+        .request(options)
+        .then(function (response) {
+          console.log(response.data);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
     } catch (error) {
       console.error(error);
     }

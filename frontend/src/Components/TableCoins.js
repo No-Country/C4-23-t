@@ -19,7 +19,7 @@ const TableCoins = ({ coins, search }) => {
   if (!coins) return <div>no coins</div>;
 
   return (
-    <table className="table-auto w-full  h-screen divide-y divide-x  border-black border-2 ">
+    <table className="table-auto w-full h-96 divide-y divide-x  border-black border-2 ">
       <thead>
         <tr className="divide-sky-500 border-sky-600 ">
           {titles.map((title, i) => (
