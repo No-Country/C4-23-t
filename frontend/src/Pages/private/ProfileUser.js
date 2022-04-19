@@ -1,14 +1,12 @@
 import React from "react";
-import CardsSetings from "../../Components/CardsSettins";
+import ProfileComponent from "../../Components/ProfileComponent";
 import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-export default function PrivateSettings() {
+const ProfileUser = () => {
   const auth = useSelector((state) => state.auth);
   if (auth.token == null) return <Navigate to="/userLogin" />;
-  return (
-    <div className="flex flex-col">
-      <CardsSetings />
-    </div>
-  );
-}
+  return <ProfileComponent></ProfileComponent>;
+};
+
+export default ProfileUser;

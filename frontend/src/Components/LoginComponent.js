@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import "../CSS/LoginComponent.css";
 import loginBanner from "../Assets/login_banner.png";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 import { signIn } from "../store/actions/authActions";
 
 const LoginForm = () => {
@@ -28,7 +28,7 @@ const LoginForm = () => {
     dispatch(signIn(values.email, values.password));
   };
 
-  if (auth._id) return navigate("/private/");
+  if (auth.token) return <Navigate to="/private/" />;
 
   return (
     <div className="loginComponentSize">

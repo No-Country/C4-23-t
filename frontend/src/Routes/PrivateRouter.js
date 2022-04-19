@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom";
-import User from "../Pages/User";
 import Error from "../Pages/Error";
 import PrivateSettings from "../Pages/private/PrivateSettings";
 import PrivateHome from "../Pages/private/PrivateHome";
-import ProfileComponent from "../Components/ProfileComponent";
 import UserLayout from "../Components/UserLayout";
+import ProfileUser from "../Pages/private/ProfileUser";
+import Swap from "../Pages/private/Swap";
 
 const PrivateRouter = () => {
   return (
@@ -13,9 +13,9 @@ const PrivateRouter = () => {
         <Routes>
           <Route>
             <Route exact match path="/" element={<PrivateHome />} />
-            <Route exact match path="user" element={<User />} />
             <Route exact match path="settings" element={<PrivateSettings />} />
-            <Route exact match path="profile" element={<ProfileComponent />} />
+            <Route exact match path="profile" element={<ProfileUser />} />
+            <Route exact match path="swap" element={<Swap></Swap>} />
             <Route path="*" element={<Error />} />
           </Route>
         </Routes>
