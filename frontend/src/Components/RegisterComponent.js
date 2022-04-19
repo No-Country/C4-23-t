@@ -51,7 +51,7 @@ const RegisterForm = () => {
     dispatch(signUp(values));
   };
 
-  if (auth._id) return navigate("/private/user");
+  if (auth._id) return navigate("/private/");
 
   return (
     <div className="registerMain">

@@ -20,7 +20,7 @@ const LoginComponentAl = () => {
     setCreds({ email: "", password: "" });
   };
 
-  if (auth._id) return navigate("/private/user");
+  if (auth._id) return navigate("/private/");
 
   return (
     <>

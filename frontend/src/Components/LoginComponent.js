@@ -28,7 +28,7 @@ const LoginForm = () => {
     dispatch(signIn(values.email, values.password));
   };
 
-  if (auth._id) return navigate("/private/user");
+  if (auth._id) return navigate("/private/");
 
   return (
     <div className="loginComponentSize">
