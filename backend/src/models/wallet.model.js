@@ -4,20 +4,34 @@ const walletSchema = mongoose.Schema({
   directionName: {
     type: String,
     required: true,
-    trim: true,
-  },
-  lastMovement: {
-    type: Number,
-    required: true,
-    trim: true,
   },
   user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
+    type: String,
+    required: true,
   },
-  money: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Money",
+  arg: {
+    type: Number,
+    required: true,
+  },
+  btc: {
+    type: Number,
+    required: true,
+  },
+  eth: {
+    type: Number,
+    required: true,
+  },
+  usdt: {
+    type: Number,
+    required: true,
+  },
+  bnb: {
+    type: Number,
+    required: true,
+  },
+  usdc: {
+    type: Number,
+    required: true,
   },
 });
 

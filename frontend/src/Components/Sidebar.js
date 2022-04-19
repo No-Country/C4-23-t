@@ -54,14 +54,14 @@ const Sidebar = () => {
             </li>
           </Link>
 
-          <Link to={"/private/profile"}>
+          {/*    <Link to={"/private/profile"}>
             <li>
               <div className={styles.icon}>
                 <img src={profile} alt="Icono Home" />
               </div>
               <h4>Profile</h4>
             </li>
-          </Link>
+          </Link> */}
 
           <Link to={"/private/settings"}>
             <li>
