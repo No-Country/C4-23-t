@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.String,
     required: true,
   },
-  bithdate: {
+  birthdate: {
     type: mongoose.Schema.Types.Date,
     required: false,
   },
@@ -29,14 +29,9 @@ const userSchema = new mongoose.Schema({
     maxlength: 1024,
     required: true,
   },
-
   dni: {
     type: mongoose.Schema.Types.Number,
     required: true,
-  },
-  wallet: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Wallet",
   },
 });
 
