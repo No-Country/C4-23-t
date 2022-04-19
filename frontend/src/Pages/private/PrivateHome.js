@@ -11,12 +11,14 @@ import { useSelector } from "react-redux";
 const PrivateHome = () => {
   useTitle("Home")
   const auth = useSelector((state) => state.auth);
+  const [coinsName, getCoinsName] = useState([])
   const [coinOne, getCoinOne] = useState([])
   const [coinTwo, getCoinTwo] = useState([])
   const [coinThree, getCoinThree] = useState([])
   const APITrending = "https://api.coingecko.com/api/v3/search/trending"
-  const fetchPost = async () => {
-    const response = await fetch(APITrending)
+  function getUrl (coinId){return "https://api.coingecko.com/api/v3/simple/price?ids=" + coinId + "&vs_currencies=ars&include_market_cap=false&include_24hr_vol=false&include_24hr_change=true"}
+  const fetchGet = async (url) => {
+    const response = await fetch(url)
     if (!response.ok){
       throw new Error ("Data could not be fetched")
     } else {
@@ -24,47 +26,49 @@ const PrivateHome = () => {
     }
   }
   useEffect (() => {
-    fetchPost()
+    fetchGet(APITrending)
     .then((res) => {
-      getCoinOne(res.coins.slice(0-3).map((data) =>
-      data.item)[0])
-      getCoinTwo(res.coins.slice(0-3).map((data) =>
-      data.item)[1])
-      getCoinThree(res.coins.slice(0-3).map((data) =>
-      data.item)[2])
+
+      getCoinsName(res.coins.map((data) => data.item).slice(0-3))
+
+      fetchGet(getUrl(res.coins.map((data) => data.item).slice(0-3)[0].id))
+      .then((res1) => {
+        getCoinOne(res1)
+        })
+      .catch((e) => {})
+
+      fetchGet(getUrl(res.coins.map((data) => data.item).slice(0-3)[1].id))
+      .then((res2) => {
+        getCoinTwo(res2)
+        })
+      .catch((e) => {})
+
+      fetchGet(getUrl(res.coins.map((data) => data.item).slice(0-3)[2].id))
+      .then((res3) => {
+        getCoinThree(res3)
+        })
+      .catch((e) => {})
+      
       })
     .catch((e) => {
       
     })
   }, [])
   
-
-
-console.log(coinOne)
-console.log(coinTwo)
-console.log(coinThree.name)
-
-
-/* const coinOne = post[0]
-const coinTwo = post[1]
-const coinThree = post[2] */
-
-/* console.log(coinOne)
-console.log(coinTwo)
-console.log(coinThree) */
-
+if(coinOne[Object.keys(coinOne)[0]]){
+  console.log(coinOne[Object.keys(coinOne)[0]].ars)
+}
 
 if (auth.token == null) return <Navigate to="/userLogin" />;
-
 
   return (
     
     <div className="PrivateHome">
       <h3 className="privateHomeTitle">Tendencias</h3>
       <div className="privateHomeContainer">
-        <UserHomeCard cryptoCoin={coinOne.symbol} price={coinOne.price_btc} variation="26" graphic={demoGraphic}/>
-        <UserHomeCard cryptoCoin={coinTwo.symbol} price={coinTwo.price_btc} variation="26" graphic={demoGraphic}/>
-        <UserHomeCard cryptoCoin={coinThree.symbol} price={coinThree.price_btc} variation="26" graphic={demoGraphic}/>
+        <UserHomeCard cryptoCoin={coinsName[0] && coinsName[0].symbol} price={coinOne[Object.keys(coinOne)[0]] && coinOne[Object.keys(coinOne)[0]].ars} variation={coinOne[Object.keys(coinOne)[0]] && coinOne[Object.keys(coinOne)[0]].ars_24h_change.toFixed(3)} graphic={demoGraphic}/>
+        <UserHomeCard cryptoCoin={coinsName[1] && coinsName[1].symbol} price={coinTwo[Object.keys(coinTwo)[0]] && coinTwo[Object.keys(coinTwo)[0]].ars} variation={coinTwo[Object.keys(coinTwo)[0]] && coinTwo[Object.keys(coinTwo)[0]].ars_24h_change.toFixed(3)} graphic={demoGraphic}/>
+        <UserHomeCard cryptoCoin={coinsName[2] && coinsName[2].symbol} price={coinThree[Object.keys(coinThree)[0]] && coinThree[Object.keys(coinThree)[0]].ars} variation={coinTwo[Object.keys(coinTwo)[0]] && coinTwo[Object.keys(coinTwo)[0]].ars_24h_change.toFixed(3)} graphic={demoGraphic}/>
       </div>
       <h3 className="title">Noticias</h3>
       <h4 className="subtitle">Proximamente......</h4>
