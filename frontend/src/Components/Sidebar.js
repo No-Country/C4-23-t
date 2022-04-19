@@ -6,9 +6,19 @@ import swap from "../Assets/swap.svg";
 import profile from "../Assets/profile.svg";
 import seetings from "../Assets/setting.svg";
 import logout from "../Assets/logout.svg";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import styles from "../CSS/Sidebar.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { signOut } from "../store/actions/authActions";
+import "../CSS/TextImage.css";
+
 const Sidebar = () => {
+  const dispatch = useDispatch();
+  const auth = useSelector((state) => state.auth);
+  const handleSignOut = () => {
+    dispatch(signOut());
+    if (auth.token == null) return <Navigate to="/" />;
+  };
   return (
     <>
       <nav className={styles.sidebar}>
@@ -62,9 +72,11 @@ const Sidebar = () => {
             </li>
           </Link>
           <li>
-            <div className={styles.icon}>
-              <img src={logout} alt="Icono Home" />
-            </div>
+            <button style={{ display: "row" }} onClick={() => handleSignOut()}>
+              <div className={styles.icon}>
+                <img src={logout} alt="Icono Home" />
+              </div>
+            </button>
             <h4>Logout</h4>
           </li>
         </ul>
