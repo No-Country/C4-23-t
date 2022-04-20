@@ -8,6 +8,7 @@ import connectDb from "./config/db.js";
 import signUp from "./routes/signUp.js";
 import dotenv from "dotenv";
 import singIn from "./routes/singIn.js";
+import wallet from "./routes/wallet.js";
 
 // Creating express app
 const app = express();
@@ -29,5 +30,6 @@ app.get("/", (req, res) => {
 //routes
 app.use("/api/singup", signUp);
 app.use("/api/signin", singIn);
+app.use("/api/wallet", wallet);
 
 // Starting server
