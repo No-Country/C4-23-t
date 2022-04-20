@@ -1,14 +1,14 @@
 import React from "react";
 
-const UserCard = ({ dev, developer, text }) => {
+const UserCard = ({ dev, imageUrl, text }) => {
   return (
     //UserCard
     <div className="max-w-sm mx-auto sm:max-w-auto md:max-w-auto md:h-auto">
-      <div className="flex h-[50%]">
+      <div className="flex h-[50%] w-[25em]">
         <div className="grid grid-cols-2 md:shrink bg-[#EEEEEE] rounded-3xl">
           <img
             className="my-6 mx-8 h-32 w-40 object-cover md:h-auto  md:w-40 lg:w-40 xl:w-40 rounded-[2rem]"
-            src={developer}
+            src={imageUrl}
             alt="CEO"
           />
           <div className="p-6 pb-0 my-4 mr-2 sm:text-center md:text-center lg:text-center xl:text-center">
