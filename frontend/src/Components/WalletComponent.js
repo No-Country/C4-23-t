@@ -8,6 +8,8 @@ const Wallet = () => {
     btc: 0.0012,
     eth: 2,
     bnb: 13,
+    usdt: 0,
+    usdc: 0,
   };
 
   const [coins, setCoins] = useState([]);
@@ -31,7 +33,7 @@ const Wallet = () => {
   return (
     <div className="walletContainer">
       <table>
-        <thead>
+        <thead className="walletHead">
           <tr>
             <th>Moneda</th>
             <th>Balance</th>
@@ -39,17 +41,25 @@ const Wallet = () => {
           </tr>
         </thead>
         <tbody>
+          <tr>
+            <td>Pesos</td>
+          </tr>
           {coins.map((row) => {
             console.log(walletPrueba.hasOwnProperty(row.symbol));
             return walletPrueba.hasOwnProperty(row.symbol) ? (
-              <tr>
-                <td>
-                  <div className="walletCoinColumn">
+              <tr className="walletBody">
+                <td className="walletCoinColumn">
+                  <div className="walletCoinColumnImg">
                     <img src={row.image} alt="coin logo" />
-                    {row.name}
                   </div>
+                  <div className="walletCoinColumnName">{row.name}</div>
                 </td>
-                <td>${row.current_price.toLocaleString()}</td>
+                <td className="walletBalance">
+                  <div>${row.current_price.toLocaleString()}</div>
+                </td>
+                <td>
+                  <button>Comprar {row.symbol.toUpperCase()}</button>
+                </td>
               </tr>
             ) : null;
           })}
