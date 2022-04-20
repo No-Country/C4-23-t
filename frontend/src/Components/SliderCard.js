@@ -129,7 +129,6 @@ export default function SliderCard() {
             />
             {/* <-------------- 6  */}
           </div>
-          
         </div>
       </div>
     </section>

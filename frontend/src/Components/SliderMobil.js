@@ -23,7 +23,7 @@ export const SliderMobil = () => {
           dev={"FULLSTACK UI/UX"}
           text={"Dedicación, constancia y organización son claves para el éxito del proyecto"}
           imageUrl={imgPablo}
-          name={"Pablo Vyeira"}
+          name={"Pablo Vieyra"}
         />
         {/* <-------------- 2  */}
       </div>
