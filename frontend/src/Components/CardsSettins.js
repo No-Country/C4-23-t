@@ -16,7 +16,7 @@ export default function CardsSetings() {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row ">
+      <div className="flex flex-col md:flex-row  justify-center my-12 ">
         <div className="flex flex-col md:w-1/3">
           <div className="w-full  my-3 lg:w-full  px-5 py-2 rounded-3xl bg-slate-100 h-full">
             <h2 className="text-2xl my-5 text-sky-600 ">Cambiar Contraseña</h2>
