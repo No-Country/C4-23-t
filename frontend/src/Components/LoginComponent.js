@@ -35,9 +35,7 @@ const LoginForm = () => {
       <div className="loginContainer">
         <div className="loginWrapper">
           <div className="loginImageWrapper">
-            <div className="loginSkew">
-              <img src={loginBanner} alt="Banner for login" />
-            </div>
+            <img src={loginBanner} alt="Banner for login" />
           </div>
           <div className="loginFormWrapper">
             <div className="loginForm">
@@ -71,10 +69,10 @@ const LoginForm = () => {
                   );
                 }}
               </Formik>
+              <Link className="register-nav" to="/register">
+                ¿ No tienes una cuenta? Registrate
+              </Link>
             </div>
-            <Link className="register-nav" to="/register">
-              ¿ No tienes una cuenta? Registrate
-            </Link>
           </div>
         </div>
       </div>

@@ -7,62 +7,46 @@
 
 .loginContainer {
   display: flex;
-  justify-content: center;
-}
-.login-register {
-  display: flex;
-  flex-direction: column;
+  background-color: rgb(238,238,238);
+  border-radius: 15px;
 }
 
 .loginWrapper {
   width: 505px;
   height: 275px;
-  background-color: #eee;
+  background: linear-gradient(108deg, rgba(238,238,238,1) 0%, rgba(74,136,196,1) 0%, rgba(74,136,196,1) 50%, rgba(0,5,9,0) 52%);
   border-radius: 15px;
   display: flex;
-  flex-direction: column(2);
   justify-content: space-between;
 }
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 800px) {
   .loginWrapper {
     width: 250px;
     height: 300px;
     border-bottom: 10px solid #4a88c4;
     border-top: 10px solid #4a88c4;
+    background: rgb(238,238,238);
   }
 }
 
 .loginImageWrapper {
-  background: #4a88c4;
-  position: relative;
-  width: 45%;
-  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 800px) {
   .loginImageWrapper {
     display: none;
   }
 }
 
-.loginSkew {
-  background: #4a88c4;
-  transform: skew(-13deg);
-  width: 50%;
-  margin-left: 150px;
-  height: 100%;
-  box-shadow: 10px 0 15px -2px #888;
-  display: flex;
-  align-items: center;
-}
-
 .loginImageWrapper img {
   z-index: 2;
   height: auto;
-  transform: skew(13deg) scale(2.1);
-  margin-left: -80px;
-  margin-bottom: 15px;
+  transform: scale(0.85);
+  margin-right: 30px;
 }
 
 .loginFormWrapper {
@@ -121,6 +105,7 @@
   font-size: 7px;
   color: red;
 }
+
 .register-nav {
   color: #0369a1;
 }
