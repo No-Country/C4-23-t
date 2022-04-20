@@ -42,8 +42,8 @@ const SearchCoin = () => {
 
   return (
     <div className="border-4 ">
-      <div className="bg-white space-y-4 p-4 sm:px-8 sm:py-6 lg:p-4 xl:px-8 xl:py-6">
-        <form class="group relative">
+      <div className="bg-white space-y-4 p-4 sm:px-8 sm:py-6 lg:p-4 xl:px-8 xl:py-6 min-h-screen  ">
+        <form class="group relative w-1/2 m-auto">
           <svg
             width="20"
             height="20"
@@ -58,7 +58,7 @@ const SearchCoin = () => {
             />
           </svg>
           <input
-            className="focus:ring-2 focus:ring-blue-500 focus:outline-none appearance-none w-full text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-md py-2 pl-10 ring-1 ring-slate-200 shadow-sm"
+            className="focus:ring-2 focus:ring-blue-500 focus:outline-none appearance-none w-full  text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-md py-2 pl-10 ring-1 ring-slate-200 shadow-sm"
             type="text"
             aria-label="Filter projects"
             placeholder="Search a Coin"
