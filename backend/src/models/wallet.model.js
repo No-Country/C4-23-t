@@ -33,6 +33,10 @@ const walletSchema = mongoose.Schema({
     type: Number,
     required: true,
   },
+  uid: {
+    type: String,
+    required: true,
+  },
 });
 
 const Wallet = mongoose.model("Wallet", walletSchema);
