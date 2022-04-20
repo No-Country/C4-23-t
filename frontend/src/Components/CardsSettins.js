@@ -18,7 +18,7 @@ export default function CardsSetings() {
     <>
       <div className="flex flex-col md:flex-row  justify-center my-12 ">
         <div className="flex flex-col md:w-1/3">
-          <div className="w-full  my-3 lg:w-full  px-5 py-2 rounded-3xl bg-slate-100 h-full">
+          <div className="w-full  my-3 lg:w-full  px-5 py-2 rounded-3xl bg-slate-100 h-full  shadow-2xl">
             <h2 className="text-2xl my-5 text-sky-600 ">Cambiar Contraseña</h2>
             {error && <p className="text-red-500">{error}</p>}
             <form
@@ -61,7 +61,7 @@ export default function CardsSetings() {
             </form>
           </div>
           {/* card info */}
-          <div className="w-full   my-2 lg:w-full px-5 py-2 rounded-3xl h-full bg-slate-100 flex flex-col">
+          <div className="w-full   my-2 lg:w-full px-5 py-2 rounded-3xl h-full bg-slate-100 flex flex-col shadow-2xl">
             <h2 className="text-2xl my-5 text-sky-600 ">Info</h2>
             <h3>
               Numero de wallet:{" "}
@@ -79,8 +79,8 @@ export default function CardsSetings() {
           </div>
         </div>
         {/* card soporte */}
-        <div className="w-full md:w-1/3 my-auto">
-          <div className="w-full  my-2 px-5 py-2 rounded-3xl ml-7 bg-slate-100 flex flex-col ">
+        <div className="w-full md:w-1/3 my-auto ">
+          <div className="w-full  my-2 px-5 py-2 rounded-3xl ml-7 bg-slate-100 flex flex-col shadow-2xl ">
             <h2 className="text-2xl my-5 text-sky-600 ">Soporte</h2>
             <h3>
               Si tienes alguna duda o problema, puedes contactar con nosotros a
