@@ -1,6 +1,6 @@
 import React from "react";
 
-const UserCard = ({ dev, imageUrl, text }) => {
+const UserCard = ({ dev, imageUrl, text, name }) => {
   return (
     //UserCard
     <div className="max-w-sm mx-auto sm:max-w-auto md:max-w-auto md:h-auto">
@@ -18,6 +18,9 @@ const UserCard = ({ dev, imageUrl, text }) => {
           </div>
           <div className="text-center pt-0 pb-8 pl-8 items-center uppercase tracking-wider text-2xl text-[#1A69B4] font-semibold">
             {dev}
+          </div>
+          <div className="text-center pt-4 items-center uppercase tracking-wider text-lg text-[#1A69B4] font-semibold">
+            {name}
           </div>
         </div>
       </div>

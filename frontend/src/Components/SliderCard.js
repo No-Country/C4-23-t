@@ -70,6 +70,7 @@ export default function SliderCard() {
               dev={"FULLSTACK UI/UX"}
               text={"Dedicación, constancia y organización son claves para el éxito del proyecto"}
               imageUrl={imgPablo}
+              name={"Pablo Vieyra"}
             />
             {/* <-------------- 1  */}
           </div>
@@ -78,6 +79,7 @@ export default function SliderCard() {
               dev={"FULLSTACK DEVELOPER"}
               text={"La comunicación y el trabajo en equipo es fundamental para llevar a cabo un proyecto"}
               imageUrl={imgPedro}
+              name={"Pedro Acosta"}
             />
             {/* <-------------- 2  */}
           </div>
@@ -91,6 +93,7 @@ export default function SliderCard() {
               dev={"FULLSTACK DEVELOPER"}
               text={"Aprender de otros desarrolladores es un privilegio que muy pocos valoran"}
               imageUrl={imgMartin}
+              name={"Martín Castro"}
             />
             {/* <-------------- 3  */}
           </div>
@@ -99,6 +102,7 @@ export default function SliderCard() {
               dev={"FULLSTACK TESTER"}
               text={"Un buen desarrollo y buena estética hacen brillar cualquier proyecto"}
               imageUrl={imgJulian}
+              name={"Julian Marc"}
             />
             {/* <-------------- 4  */}
           </div>
@@ -112,6 +116,7 @@ export default function SliderCard() {
               dev={"FULLSTACK DEVELOPER"}
               text={"Da lo mejor de ti en cada asignación, por muy fácil o difícil que resulte"}
               imageUrl={imgEdu}
+              name={"Edu Falcón"}
             />
             {/* <-------------- 5  */}
           </div>
@@ -120,9 +125,11 @@ export default function SliderCard() {
               dev={"FRONTEND DEVELOPER"}
               text={"Estar en un gran equipo de trabajo hace que queramos esforzarnos cada día"}
               imageUrl={imgMike}
+              name={"Miguel Briceño"}
             />
             {/* <-------------- 6  */}
           </div>
+          
         </div>
       </div>
     </section>
