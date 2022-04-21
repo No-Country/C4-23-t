@@ -7,7 +7,7 @@ const UserCard = ({ dev, imageUrl, text, name }) => {
       <div className="flex h-[50%] w-[25em]">
         <div className="grid grid-cols-2 md:shrink bg-[#EEEEEE] rounded-3xl">
           <img
-            className="my-6 mx-8 h-32 w-40 object-cover md:h-auto  md:w-40 lg:w-40 xl:w-40 rounded-[2rem]"
+            className="my-6 mx-8 h-32 w-40 object-cover md:h-auto md:w-40 rounded-[2rem]"
             src={imageUrl}
             alt="CEO"
           />

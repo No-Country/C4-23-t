@@ -14,6 +14,7 @@ export const SliderMobil = () => {
           dev={"FULLSTACK DEVELOPER"}
           text={"La comunicación y el trabajo en equipo es fundamental para llevar a cabo un proyecto"}
           imageUrl={imgPedro}
+          name={"Pedro Acosta"}
         />
         {/* <-------------- 1  */}
       </div>
@@ -22,6 +23,7 @@ export const SliderMobil = () => {
           dev={"FULLSTACK UI/UX"}
           text={"Dedicación, constancia y organización son claves para el éxito del proyecto"}
           imageUrl={imgPablo}
+          name={"Pablo Vyeira"}
         />
         {/* <-------------- 2  */}
       </div>
@@ -30,6 +32,7 @@ export const SliderMobil = () => {
           dev={"FULLSTACK TESTER"}
           text={"Un buen desarrollo y buena estética hacen brillar cualquier proyecto"}
           imageUrl={imgJulian}
+          name={"Julian Marc"}
         />
         {/* <-------------- 3  */}
       </div>
@@ -38,6 +41,7 @@ export const SliderMobil = () => {
           dev={"FULLSTACK DEVELOPER"}
           text={"Aprender de otros desarrolladores es un privilegio que muy pocos valoran"}
           imageUrl={imgMartin}
+          name={"Martín Castro"}
         />
         {/* <-------------- 4  */}
       </div>
@@ -46,6 +50,7 @@ export const SliderMobil = () => {
           dev={"FRONTEND DEVELOPER"}
           text={"Estar en un gran equipo de trabajo hace que queramos esforzarnos cada día"}
           imageUrl={imgMike}
+          name={"Miguel Briceño"}
         />
         {/* <-------------- 5  */}
       </div>
@@ -54,6 +59,7 @@ export const SliderMobil = () => {
           dev={"FULLSTACK DEVELOPER"}
           text={"Da lo mejor de ti en cada asignación, por muy fácil o difícil que resulte"}
           imageUrl={imgEdu}
+          name={"Edu Falcón"}
         />
         {/* <-------------- 6  */}
       </div>
