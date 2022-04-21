@@ -7,9 +7,6 @@ import useTitle from "../../Utils/useTitle";
 import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-
-
-
 const PrivateHome = () => {
   useTitle("Home")
   const auth = useSelector((state) => state.auth);
@@ -104,6 +101,7 @@ const options = {
     legend: { position: "bottom" },
   };
 
+  if (auth.token == null) return <Navigate to="/userLogin" />;
 
   return (
     
