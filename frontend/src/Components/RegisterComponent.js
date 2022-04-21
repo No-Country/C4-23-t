@@ -33,9 +33,9 @@ const RegisterForm = () => {
       .matches(/^[aA-zZ]+$/, "Only alphabets are allowed for this field "),
     password: Yup.string()
       .required("Field is required")
-      .min(2, "Too Short")
+      .min(8, "Too Short")
       .max(20, "Too long"),
-    dni: Yup.number("Only numbers")
+    dni: Yup.number("Only numbers").typeError("Only numbers are allowed")
       .test("len", "Length too short", (val) => val.toString().length > 4)
       .test("len", "Length too long", (val) => val.toString().length < 9)
       .required("Field is required"),
@@ -69,7 +69,7 @@ const RegisterForm = () => {
                 control="input"
                 type="name"
                 name="name"
-                placeholder="name"
+                placeholder="Name"
               />
               <FormControl
                 className="registerFormUser registerField"

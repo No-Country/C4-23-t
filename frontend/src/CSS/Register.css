@@ -1,6 +1,13 @@
 
 
+.formError {
+  font-size: var(--fs-h3b);
+  padding-bottom: 0;
+}
 
+.registerField {
+  padding-top: 0;
+}
 
 .registerMain {
     margin: auto;
