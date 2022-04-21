@@ -41,23 +41,23 @@ export default function SliderCard() {
           alt="fondo"
           className="w-screen h-[350px] sm:h-screen shadow-lg rounded-[40px]"
         />
-        <h1 className="absolute top-5 sm:top-20 text-[#1A69B4] font-bold text-lg sm:text-4xl text-center px-4">
+        <h1 className="absolute -top-4 text-[#1A69B4] font-bold text-lg sm:text-4xl text-center px-4">
           ¿Quiénes son los integrantes de nuestro equipo?
         </h1>
-        {/* cuando el usuario este en mobil */}
+        {/* cuando el usuario esté en movil */}
         <SliderMobil />
         {/* sm:max esto se ejecuta cuando las pantalla eas grande*/}
         <div className="hidden sm:flex sm:flex-col absolute  sm:items-center sm:gap-6">
           <div className="top-1/4 right-1/3 md:top-4 md:right-8 md:absolute">
             <button className=" text-[#1A69B4] font-bold py-2 px-4 rounded-full">
-              <ArrowBackIcon w={30} h={30} boxSize={80} />
+              <ArrowBackIcon mt={30} w={30} h={30} boxSize={80} />
             </button>
             {/* boton de back */}
             <button
               onClick={changeNext}
               className=" text-[#1A69B4] font-bold py-2 px-4 rounded-full"
             >
-              <ArrowForwardIcon w={30} h={30} boxSize={80} />
+              <ArrowForwardIcon mt={30} w={30} h={30} boxSize={80} />
             </button>
           </div>
           {/* las primeras cards */}
