@@ -1,8 +1,19 @@
 import React, { useState } from "react";
+import swal from "sweetalert";
 
 export default function CardsSetings() {
   const [error, setError] = useState("");
   const [numberWallet, setNumberWallet] = useState("");
+
+  const showAlert = () => {
+    swal({
+      title: "Para Cambiar tu Contraseña",
+      text: "Favor de comunicarte a este E-mail: correo@correo.com",
+      icon: "info",
+      button: "Aceptar",
+      timer: "2000",
+    });
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = Object.fromEntries(new FormData(e.target));
@@ -35,6 +46,7 @@ export default function CardsSetings() {
               />
               <hr className=" border-black " />
               <input
+                onClick={() => showAlert()}
                 type="password"
                 name="newPassword"
                 id="newPassword"
@@ -90,9 +102,11 @@ export default function CardsSetings() {
               <span>1150594589</span>
               <a href="#">(julian)</a>
             </h5>
-            <button className="py-1 px-2 bg-sky-600  ml-auto rounded-full mt-4 text-2xl text-white">
-              Contactar
-            </button>
+            <a href="https://api.whatsapp.com/send?phone=5491150594589">
+              <button className="py-1 px-2 bg-sky-600  ml-auto rounded-full mt-4 text-2xl text-white">
+                Contactar
+              </button>
+            </a>
           </div>
         </div>
       </div>
