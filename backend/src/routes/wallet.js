@@ -46,7 +46,7 @@ router.post("/", auth, async (req, res) => {
 
   if (error) return res.status(400).send(error.details[0].message);
 
-  const { directionName, user, arg, btc, eth, usdt, bnb, usdc } = req.body;
+  const { directionName, user, arg, btc, eth, usdt, bnb, usdc, uid } = req.body;
 
   let wallet = new Wallet({
     directionName,

@@ -35,7 +35,6 @@ const walletSchema = mongoose.Schema({
   },
   uid: {
     type: String,
-    required: true,
   },
 });
 

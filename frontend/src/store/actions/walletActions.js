@@ -18,11 +18,11 @@ export const getWallet = () => {
       });
   };
 };
-//hace la peticion get para buscar todas la jornadas
+//hace la peticion get
 export const getWalletAdmin = () => {
   return (dispatch) => {
     axios
-      .get(`${url}/todos/admin`, setHeaders())
+      .get(`${url}/wallet/admin`, setHeaders())
       .then((wallet) => {
         dispatch({
           type: "GET_WALLET_ADMIN",
@@ -37,10 +37,10 @@ export const getWalletAdmin = () => {
 //añade la  jornada
 export const addWallet = (newWallet) => {
   return (dispatch, getState) => {
-    const author = getState().auth.name;
+    const user = getState().auth.name;
     const uid = getState().auth._id;
     axios
-      .post(`${url}/wallet`, { ...newWallet, author, uid }, setHeaders())
+      .post(`${url}/wallet`, { ...newWallet, user, uid }, setHeaders())
       .then((wallet) => {
         dispatch({
           type: "ADD_WALLET",
