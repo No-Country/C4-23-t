@@ -12,6 +12,10 @@ const SwapCard = () => {
     const arrayCriptos = await resultado.map(cripto => (
       cripto.symbol
     ))
+    const arrayPrices = await resultado.map(cripto => (
+      cripto.current_price
+    ))
+      console.log(arrayPrices)
     console.log(resultado);
       setCoins(arrayCriptos);
   };
@@ -23,8 +27,8 @@ const SwapCard = () => {
   const [coinInput, setCoinInput] = useState("btc");
   const [coinSelected, setCoinSelected] = useState("btc");
 
-useEffect(() => {setValConvert(val*2)},[val])
-  
+
+
 
   const coinInverted = () => {
     setCoinInput(coinSelected);
@@ -75,8 +79,8 @@ useEffect(() => {setValConvert(val*2)},[val])
                 minLength={1}
                 maxLength={79} 
                 value={val}
-                onChange={(e) => 
-                setVal((v) => (e.target.validity.valid ? e.target.value : v))} />
+                onChange={(e) => {setValConvert((v) => (e.target.validity.valid ? e.target.value : v)*2)
+                setVal((v) => (e.target.validity.valid ? e.target.value : v))}} />
                 </label>
               </section>
 
