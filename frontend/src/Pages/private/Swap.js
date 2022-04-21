@@ -6,6 +6,8 @@ import { useSelector } from "react-redux";
 
 const Swap = () => {
   const auth = useSelector((state) => state.auth);
+  const wallets = useSelector((state) => state.wallet);
+  console.log(wallets);
   if (auth.token == null) return <Navigate to="/userLogin" />;
   return (
     <div className="md:flex flex-row gap-[1%]">
