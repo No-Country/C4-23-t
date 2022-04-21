@@ -1,73 +1,107 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../CSS/SwapCard.css'
 
 const SwapCard = () => {
-  const [val, setVal] = useState();
-  const [valConvert, setValConvert] = useState();
+  const [coins, setCoins] = useState([]);
+  
+  useEffect(() => {
+    const consultarAPI = async() => { 
+    const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=5&page=1&sparkline=false';
+    const respuesta = await fetch(url);
+    const resultado = await respuesta.json();
+    const arrayCriptos = resultado.map(cripto => (
+      cripto.symbol
+    ));
+      setCoins(arrayCriptos);
+  };
+    consultarAPI()
+  },[])
 
+  const [val, setVal] = useState("");
+  const [valConvert, setValConvert] = useState("");
+  const [coinInput, setCoinInput] = useState("btc");
+  const [coinSelected, setCoinSelected] = useState("btc");
+
+  const multiply = (result) => result ;
+
+  const coinInverted = () => {
+    setCoinInput(coinSelected);
+    setCoinSelected(coinInput);
+  }
+    console.log(coinInput)
+
+    console.log(coinSelected);
     return (
-      <section className='container1st' >
-              <div className='containerOne'>
-                <section className='sectionOne' >
-                  <h1>Swap</h1>
-                  <p>
-                    Canjea tus criptomonedas en un instante
-                  </p>
-                </section>
+      <>
+        <section className='container1st' >
+            <div className='containerOne'>
+              <section className='sectionOne' >
+                <h1>Swap</h1>
+                <p>
+                  Canjea tus criptomonedas en un instante
+                </p>
+              </section>
 
-                <hr/>
+              <hr/>
 
-                <section className='sectionCoinButton' >
-                  <button className='hover:opacity-50 active:animate-bounce'>
-                    <img src={'https://img.icons8.com/color/344/4a90e2/tether--v2.png'} alt='USDT-Tether' />
-                    <h2>USDT</h2>
-                    <img  src={"https://upload.wikimedia.org/wikipedia/commons/9/9d/Arrow-down.svg"} alt='down-arrow' />
-                  </button>
-                </section>
+              <section className='sectionCoinButton' >
+                <button className='hover:opacity-100 active:animate-bounce'>
+                  <select
+                  onChange={e => setCoinInput((e.target.value))}>
+                    {coins.map((cripto) => (
+                    <option value={cripto}>
+                      {cripto.toUpperCase()}
+                    </option>
+                    ))};
+                  </select>
+                </button>
+              </section>
 
-                <section className='sectionLabel'>
-                  <label>
-                  <input 
-                  type="text" 
-                  name='amount'
-                  inputmode='decimal'
-                  pattern='^[0-9]*[.,]?[0-9]*$'
-                  autoComplete='off'
-                  placeholder="0.0"
-                  minLength={1}
-                  maxLength={79} 
-                  value={val}
-                  onChange={(e) => 
-                  setVal((v) => (e.target.validity.valid ? e.target.value : v))} />
-                  </label>
-                </section>
+              <section className='sectionLabel'>
+                <label>
+                <input 
+                type="text" 
+                name='amount'
+                inputMode='decimal'
+                pattern='^[0-9]*[.,]?[0-9]*$'
+                autoComplete='off'
+                placeholder="0.0"
+                minLength={1}
+                maxLength={79} 
+                value={val}
+                onChange={(e) => 
+                setVal((v) => (e.target.validity.valid ? e.target.value : v))} />
+                </label>
+              </section>
 
-                <section className='sectionButtonInvert'>
-                  <button className="hover:bg-[#4A88C4] active:bg-[#1A69B4] active:animate-bounce border-solid border-transparent bg-[#C4C4C4]">
-                    <i className='fas fa-arrow-down'></i>
-                  </button>
-                </section>
+              <section className='sectionButtonInvert'>
+                <button onClick={coinInverted}   className="hover:bg-[#4A88C4] active:bg-[#1A69B4] active:animate-bounce border-solid border-transparent bg-[#C4C4C4]">
+                  <i className='fas fa-arrow-down'></i>
+                </button>
+              </section>
 
-                <section className='sectionCoinButton' >
-                  <button className='hover:opacity-50 active:animate-bounce'>
-                    <img src={"https://images.vexels.com/media/users/3/144837/isolated/lists/40f189daa5c0279718484ca5f5569f78-icono-de-bitcoin.png"} alt='BTC-Bitcoin' />
-                    <h2>BTC</h2>
-                    <img src={"https://upload.wikimedia.org/wikipedia/commons/9/9d/Arrow-down.svg"} alt='down-arrow' />
-                  </button>
-                </section>
+              <section className='sectionCoinButton' >
+                <button className='hover:opacity-50 active:animate-bounce'>
+                  <select onChange={e => setCoinSelected((e.target.value))}>
+                  {coins.map((cripto) => (
+                  <option value={cripto}>{cripto.toUpperCase()}</option>
+                  ))};
+                  </select>
+                </button>
+              </section>
 
                 <section className='sectionLabel'>
                   <label>
                     <input 
                     type="text" 
                     name='amount' 
-                    inputmode='decimal'
+                    inputMode='decimal'
                     pattern='^[0-9]*[.,]?[0-9]*$'
                     autoComplete='off'
                     placeholder="0.0"
                     minLength={1}
                     maxLength={79} 
-                    value={valConvert}
+                    value={multiply(val)}
                     onChange={(e) => 
                     setValConvert((v) => (e.target.validity.valid ? e.target.value : v))} />
                   </label>
@@ -81,6 +115,7 @@ const SwapCard = () => {
             </div> 
 
         </section>
+        </>
   );
 };
 
