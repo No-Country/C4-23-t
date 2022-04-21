@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "../CSS/WalletComponent.css";
+import signoPeso from "../Assets/signo_pesos.png";
 
 const Wallet = () => {
   const walletPrueba = {
@@ -42,7 +43,12 @@ const Wallet = () => {
         </thead>
         <tbody>
           <tr>
-            <td>Pesos</td>
+            <td className="walletCoinColumn" id="firstRow">
+              <div className="walletCoinColumnImg">
+                <img src={signoPeso} alt="signo peso" />
+              </div>
+              <div className="walletCoinColumnName">Pesos</div>
+            </td>
           </tr>
           {coins.map((row) => {
             console.log(walletPrueba.hasOwnProperty(row.symbol));
