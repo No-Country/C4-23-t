@@ -9,25 +9,31 @@ const SwapCard = () => {
     const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=5&page=1&sparkline=false';
     const respuesta = await fetch(url);
     const resultado = await respuesta.json();
-    const arrayCriptos = resultado.map(cripto => (
+    const arrayCriptos = await resultado.map(cripto => (
       cripto.symbol
-    ));
+    ))
+    console.log(resultado);
       setCoins(arrayCriptos);
   };
     consultarAPI()
   },[])
-
+  
   const [val, setVal] = useState("");
   const [valConvert, setValConvert] = useState("");
   const [coinInput, setCoinInput] = useState("btc");
   const [coinSelected, setCoinSelected] = useState("btc");
 
-  const multiply = (result) => result ;
+useEffect(() => {setValConvert(val*2)},[val])
+  
 
   const coinInverted = () => {
     setCoinInput(coinSelected);
     setCoinSelected(coinInput);
+    setValConvert(val)
+    setVal(valConvert)
   }
+
+  useEffect(() => {},[])
     console.log(coinInput)
 
     console.log(coinSelected);
@@ -46,7 +52,7 @@ const SwapCard = () => {
 
               <section className='sectionCoinButton' >
                 <button className='hover:opacity-100 active:animate-bounce'>
-                  <select
+                  <select value={coinInput}
                   onChange={e => setCoinInput((e.target.value))}>
                     {coins.map((cripto) => (
                     <option value={cripto}>
@@ -82,7 +88,7 @@ const SwapCard = () => {
 
               <section className='sectionCoinButton' >
                 <button className='hover:opacity-50 active:animate-bounce'>
-                  <select onChange={e => setCoinSelected((e.target.value))}>
+                  <select value={coinSelected} onChange={e => setCoinSelected((e.target.value))}>
                   {coins.map((cripto) => (
                   <option value={cripto}>{cripto.toUpperCase()}</option>
                   ))};
@@ -101,9 +107,7 @@ const SwapCard = () => {
                     placeholder="0.0"
                     minLength={1}
                     maxLength={79} 
-                    value={multiply(val)}
-                    onChange={(e) => 
-                    setValConvert((v) => (e.target.validity.valid ? e.target.value : v))} />
+                    value={valConvert}/>
                   </label>
                 </section>
 
