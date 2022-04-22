@@ -23,6 +23,10 @@
   border: 0.5px solid #4a88c4
 }
 
+#walletFunding {
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
 
 .walletCoinColumn {
   display: flex;  
@@ -79,6 +83,8 @@
 
 #walletPesosButton {
   background: rgb(78, 77, 77) !important;
+  margin-bottom: 15px;
+  margin-top: 10px;
 }
 
 #walletPesosButton:hover {

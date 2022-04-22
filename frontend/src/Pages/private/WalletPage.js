@@ -13,12 +13,12 @@ const WalletPage = () => {
       const res = await axios.get(`${url}/wallet`, setHeaders());
 
       setDatos(res.data);
-      console.log(res.data);
+      // console.log(res.data);
     } catch (error) {
       console.error(error);
     }
   };
-  console.log(datos);
+  // console.log(datos);
 
   useEffect(() => {
     getData();
