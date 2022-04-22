@@ -1,9 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import swal from "sweetalert";
+import { url, setHeaders } from "../api/index.js";
+import axios from "axios";
 
 export default function CardsSetings() {
   const [error, setError] = useState("");
   const [numberWallet, setNumberWallet] = useState("");
+
+  const getData = async () => {
+    try {
+      const res = await axios.get(`${url}/wallet`, setHeaders());
+
+      setNumberWallet(res.data);
+      // console.log(res.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  // console.log(datos);
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   const showAlert = () => {
     swal({
@@ -77,17 +95,12 @@ export default function CardsSetings() {
             <h2 className="text-2xl my-5 text-sky-600 ">Info</h2>
             <h3>
               Numero de wallet:{" "}
-              <span className="text-sky-600">
-                {numberWallet ? numberWallet : "xxx-xxx-xxx-xxx-xxxx-xxx-xxx"}
+              <span className="text-sky-900">
+                {numberWallet
+                  ? numberWallet[0]._id
+                  : "xxx-xxx-xxx-xxx-xxxx-xxx-xxx"}
               </span>
             </h3>
-
-            <button
-              onClick={() => console.log(numberWallet)}
-              className="py-1 px-2 bg-red-600  ml-auto rounded-full mt-4 text-2xl text-white"
-            >
-              Darse de Baja
-            </button>
           </div>
         </div>
         {/* card soporte */}
