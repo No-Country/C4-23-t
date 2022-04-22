@@ -10,9 +10,7 @@ const Swap = () => {
   console.log(wallets);
   if (auth.token == null) return <Navigate to="/userLogin" />;
   return (
-    
       <SwapCard />
-  
   );
 };
 
