@@ -85,6 +85,7 @@ const Sidebar = () => {
               <h4>Setting</h4>
             </li>
           </Link>
+          <Link to={"/userLogin"}>
           <li>
             <button style={{ display: "row" }} onClick={() => handleSignOut()}>
               <div className="icon">
@@ -93,6 +94,7 @@ const Sidebar = () => {
             </button>
             <h4>Logout</h4>
           </li>
+          </Link>
         </ul>
         <div className="contentDarckLight">
           <h3 className="darcklight">Switch Dark/ light Theme</h3>
