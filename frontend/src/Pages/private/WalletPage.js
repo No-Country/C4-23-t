@@ -2,13 +2,27 @@ import React, { useState, useEffect } from "react";
 import NewWallet from "../../Components/NewWallet";
 import Wallet from "../../Components/WalletComponent";
 import { getWallet } from "../../store/actions/walletActions";
-
-import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
+import { url, setHeaders } from "../../api/index.js";
 
 const WalletPage = () => {
-  const dispatch = useDispatch();
-  const wallets = useSelector((state) => state.wallet);
-  console.log(wallets);
+  const [datos, setDatos] = useState({});
+
+  const getData = async () => {
+    try {
+      const res = await axios.get(`${url}/wallet`, setHeaders());
+
+      setDatos(res.data);
+      console.log(res.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  console.log(datos);
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   const [walletM, setWalletM] = useState({
     directionName: "Prueba",
@@ -20,19 +34,15 @@ const WalletPage = () => {
     usdc: 0,
   });
 
-  useEffect(() => {
-    dispatch(getWallet());
-  }, [wallets, dispatch]);
-
   return (
     <>
-      {wallets._id === undefined ? (
+      {datos.length === 0 ? (
         <>
           <NewWallet walletM={walletM} setWalletM={setWalletM} />
         </>
       ) : (
         <>
-          <Wallet />
+          <Wallet datos={datos} setDatos={setDatos} />
         </>
       )}
     </>
