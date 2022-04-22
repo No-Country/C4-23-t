@@ -1,8 +1,41 @@
 import React, { useState, useEffect } from 'react';
-import '../../CSS/SwapCard.css'
+import '../../CSS/SwapCard.css';
+import axios from "axios";
+import { url, setHeaders } from "../../api/index.js";
+import swal from "sweetalert";
+
 
 const SwapCard = () => {
   const [coins, setCoins] = useState([]);
+  const [prices, setPrices] = useState([]);
+  const [exchangePrice, setExchangePrice] = useState(1);
+  const [val, setVal] = useState("");
+  const [valConvert, setValConvert] = useState("");
+  const [coinInput, setCoinInput] = useState("btc");
+  const [coinSelected, setCoinSelected] = useState("btc");
+  const [selectedCoinUpPrice, setSelectedCoinUpPrice] = useState(1)
+  const [selectedCoinDownPrice, setSelectedCoinDownPrice] = useState(1)
+  const [thirdVal, setThirdVal] = useState("")
+  const [inverted, setInverted] = useState(true)
+  const showAlert = () => {
+    swal({
+      title: "Fondos insuficientes",
+      text: "No posee suficientes " + coinInput.toUpperCase() + ". Si crees que esto es un error, por favor comunícate a este E-mail: correo@correo.com",
+      icon: "info",
+      button: "Aceptar",
+      timer: "3500",
+    });
+  };
+  const updatedWallet = (updatedWallet, id) => {
+    return axios
+      .put(`${url}/wallet/${id}`, updatedWallet, setHeaders())
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+
+
   
   useEffect(() => {
     const consultarAPI = async() => { 
@@ -15,33 +48,101 @@ const SwapCard = () => {
     const arrayPrices = await resultado.map(cripto => (
       cripto.current_price
     ))
-      console.log(arrayPrices)
-    console.log(resultado);
       setCoins(arrayCriptos);
+      setPrices(arrayPrices)
   };
     consultarAPI()
   },[])
   
-  const [val, setVal] = useState("");
-  const [valConvert, setValConvert] = useState("");
-  const [coinInput, setCoinInput] = useState("btc");
-  const [coinSelected, setCoinSelected] = useState("btc");
+  const [datos, setDatos] = useState({});
+
+  const getData = async () => {
+    try {
+      const res = await axios.get(`${url}/wallet`, setHeaders());
+      setDatos(res.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  
+  useEffect(() => {
+    getData();
+  }, []);
+  let wallet = datos
+
+  const newWallet = { };
+console.log(datos)
+function submit (){ 
+  if((wallet[0][coinInput] - val)>0){ 
+  
+    return(
+      wallet[0][coinInput] = wallet[0][coinInput] - val,
+      wallet[0][coinSelected] = wallet[0][coinSelected] + valConvert,
+      console.log(wallet),
+    newWallet = { ...wallet[0] },
+    delete newWallet["_id"],
+    delete newWallet["__v"],
+    updatedWallet(newWallet, wallet[0]._id).then(() =>
+      setDatos(wallet)))}
+  else{showAlert()}
+}
 
 
+  useEffect(() => {
+    const setCoinPriceUp = async() => { 
+    if (coinInput === "btc"){
+      setSelectedCoinUpPrice( prices[0])
+    }
+    if (coinInput === "eth"){
+      setSelectedCoinUpPrice( prices[1])
+    }
+    if (coinInput === "usdt"){
+      setSelectedCoinUpPrice( prices[2])
+    }
+    if (coinInput === "bnb"){
+      setSelectedCoinUpPrice( prices[3])
+    }
+    if (coinInput === "usdc"){
+      setSelectedCoinUpPrice( prices[4])
+    }
+  };
+    setCoinPriceUp()
+   },[coinInput, prices])
 
-
-  const coinInverted = () => {
+   useEffect(() => {
+    const setCoinPriceSelected = async() => { 
+    if (coinSelected === "btc"){
+      setSelectedCoinDownPrice( prices[0])
+    }
+    if (coinSelected === "eth"){
+      setSelectedCoinDownPrice( prices[1])
+    }
+    if (coinSelected === "usdt"){
+      setSelectedCoinDownPrice( prices[2])
+    }
+    if (coinSelected === "bnb"){
+      setSelectedCoinDownPrice( prices[3])
+    }
+    if (coinSelected === "usdc"){
+      setSelectedCoinDownPrice( prices[4])
+    }
+  };
+  setCoinPriceSelected()
+   },[coinSelected, prices])
+   
+   useEffect(() => {setExchangePrice(selectedCoinUpPrice/selectedCoinDownPrice) },[selectedCoinDownPrice, selectedCoinUpPrice])
+   useEffect(() => {setVal(thirdVal) },[thirdVal])
+   useEffect(() => {setValConvert(thirdVal*exchangePrice) },[thirdVal, exchangePrice])
+   useEffect(() => {     
     setCoinInput(coinSelected);
     setCoinSelected(coinInput);
     setValConvert(val)
-    setVal(valConvert)
-  }
+    setThirdVal(valConvert)}, [inverted])
 
-  useEffect(() => {},[])
-    console.log(coinInput)
+  function invert (){setInverted(!inverted)}
 
-    console.log(coinSelected);
-    return (
+  return (
       <>
         <section className='container1st' >
             <div className='containerOne'>
@@ -78,14 +179,15 @@ const SwapCard = () => {
                 placeholder="0.0"
                 minLength={1}
                 maxLength={79} 
-                value={val}
-                onChange={(e) => {setValConvert((v) => (e.target.validity.valid ? e.target.value : v)*2)
-                setVal((v) => (e.target.validity.valid ? e.target.value : v))}} />
+                value={thirdVal}
+                onChange={(e) => {setThirdVal((v) => (e.target.validity.valid ? e.target.value : v))}
+                
+                } />
                 </label>
               </section>
 
               <section className='sectionButtonInvert'>
-                <button onClick={coinInverted}   className="hover:bg-[#4A88C4] active:bg-[#1A69B4] active:animate-bounce border-solid border-transparent bg-[#C4C4C4]">
+                <button onClick={invert}   className="hover:bg-[#4A88C4] active:bg-[#1A69B4] active:animate-bounce border-solid border-transparent bg-[#C4C4C4]">
                   <i className='fas fa-arrow-down'></i>
                 </button>
               </section>
@@ -111,12 +213,14 @@ const SwapCard = () => {
                     placeholder="0.0"
                     minLength={1}
                     maxLength={79} 
-                    value={valConvert}/>
+                    value={valConvert}
+                    readOnly
+                    />
                   </label>
                 </section>
 
                 <section className="sectionButtonExchange" >
-                  <button className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-[#1A69B4] duration-300 active:opacity-75">
+                  <button onClick={submit} className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-[#1A69B4] duration-300 active:opacity-75">
                   Intercambiar
                 </button>
               </section>
