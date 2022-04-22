@@ -79,7 +79,7 @@ router.put("/:id", auth, async (req, res) => {
 
   const { error } = schema.validate(req.body);
 
-  if (error) return res.status(400).send(result.error.details[0].message);
+  if (error) return res.status(400).send(error.details[0].message);
 
   const wallet = await Wallet.findById(req.params.id);
 
