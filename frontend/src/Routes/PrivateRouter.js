@@ -5,7 +5,7 @@ import PrivateHome from "../Pages/private/PrivateHome";
 import UserLayout from "../Components/UserLayout";
 /* import ProfileUser from "../Pages/private/ProfileUser"; */
 import Swap from "../Pages/private/Swap";
-import WalletPage from "../Pages/private/WalletPage";
+import WalletUltimate from "../Pages/private/WalletUltimate";
 
 const PrivateRouter = () => {
   return (
@@ -21,7 +21,7 @@ const PrivateRouter = () => {
               exact
               match
               path="wallet"
-              element={<WalletPage></WalletPage>}
+              element={<WalletUltimate></WalletUltimate>}
             />
             <Route path="*" element={<Error />} />
           </Route>

@@ -22,14 +22,14 @@ export default function Home() {
         text={text1}
         isImgLeft={false}
         button="BUY CRIPTO"
-        link="#BUY"
+        link="/private/swap"
       />
       <TextImage
         img={img2}
         text={text2}
         isImgLeft={true}
         button="WALLET"
-        link="#WALLET"
+        link="/private/wallet"
       />
 
       <TextImage
