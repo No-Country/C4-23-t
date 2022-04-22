@@ -71,7 +71,7 @@ const SwapCard = () => {
   }, []);
   let wallet = datos
 
-  const newWallet = { };
+  let newWallet = { };
 console.log(datos)
 function submit (){ 
   if((wallet[0][coinInput] - val)>0){ 

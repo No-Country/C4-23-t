@@ -80,7 +80,8 @@ const Wallet = ({ datos, setDatos }) => {
             </td>
           </tr>
           {coins.map((row) => {
-            return datos[0].hasOwnProperty(row.symbol) ? (
+            return datos[0] &&
+             datos[0].hasOwnProperty(row.symbol) ? (
               <tr className="walletBody">
                 <td className="walletCoinColumn" id="walletCoins">
                   <div className="walletCoinColumnImg">
@@ -89,7 +90,7 @@ const Wallet = ({ datos, setDatos }) => {
                   <div className="walletCoinColumnName">{row.name}</div>
                 </td>
                 <td className="walletBalance">
-                  <div>{datos[0][row.symbol]}</div>
+                  <div>{(datos[0][row.symbol])}</div>
                   <div id="walletBalanceAmount">
                     = ${datos[0][row.symbol] * row.current_price}
                   </div>
