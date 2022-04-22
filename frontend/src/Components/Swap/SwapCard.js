@@ -149,7 +149,7 @@ function submit (){
             <div className='containerOne'>
               <section className='sectionOne' >
                 <h1>Swap</h1>
-                <p>
+                <p className="swapSubtitle">
                   Canjea tus criptomonedas en un instante
                 </p>
               </section>

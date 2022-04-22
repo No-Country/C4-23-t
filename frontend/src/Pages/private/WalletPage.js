@@ -7,7 +7,7 @@ import { url, setHeaders } from "../../api/index.js";
 
 const WalletPage = () => {
   const [datos, setDatos] = useState({});
-
+  useEffect(() => {document.title="Wallet"}, []);
   const getData = async () => {
     try {
       const res = await axios.get(`${url}/wallet`, setHeaders());
