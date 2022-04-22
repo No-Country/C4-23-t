@@ -6,6 +6,9 @@ import "../CSS/WalletComponent.css";
 const NewWallet = ({ walletM, setWalletM }) => {
   const dispatch = useDispatch();
   const wallet = useSelector((state) => state.wallet);
+  function refreshPage() {
+    window.location.reload(false);
+  }
 
   const handle = () => {
     /* if (walletM._id) {
@@ -26,6 +29,7 @@ const NewWallet = ({ walletM, setWalletM }) => {
       ...walletM,
     };
     dispatch(addWallet(newWallet));
+    refreshPage()
   };
   /*  }; */
   return (
