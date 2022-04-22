@@ -1,12 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "../CSS/WalletComponent.css";
-import signoPeso from "../Assets/signo_pesos.png";
+import { setHeaders, url } from "../api";
 
 const Wallet = ({ datos, setDatos }) => {
   const [coins, setCoins] = useState([]);
-  const [pesos, setPesos] = useState(0);
-  const [inputPesos, setInputPesos] = useState(0);
+  const [inputUsdt, setInputUsdt] = useState(0);
 
   const getData = async () => {
     try {
@@ -20,22 +19,41 @@ const Wallet = ({ datos, setDatos }) => {
     }
   };
 
-  const onButtonClick = (e) => {
-    e.preventDefault();
-    const value = parseInt(inputPesos) + parseInt(pesos);
-    setPesos(value);
-    setInputPesos(0);
+  let walletFunding = datos;
+  console.log(walletFunding);
+  console.log(datos);
+
+  const updateWallet = (updatedWallet, id) => {
+    return axios
+      .put(`${url}/wallet/${id}`, updatedWallet, setHeaders())
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
-  const addPesos = (e) => {
-    setInputPesos(e.target.value);
+  const onButtonClick = (e) => {
+    e.preventDefault();
+    walletFunding[0].usdt =
+      parseInt(inputUsdt) + parseInt(walletFunding[0].usdt);
+    setInputUsdt(0);
+    const newWallet = { ...walletFunding[0] };
+    delete newWallet["_id"];
+    delete newWallet["__v"];
+    updateWallet(newWallet, walletFunding[0]._id).then(() =>
+      setDatos(walletFunding)
+    );
+  };
+
+  const addUsdt = (e) => {
+    setInputUsdt(e.target.value);
   };
 
   useEffect(() => {
     getData();
   }, []);
 
-  console.log(pesos);
+  console.log(walletFunding);
+  console.log(datos);
 
   return (
     <div className="walletContainer">
@@ -50,18 +68,15 @@ const Wallet = ({ datos, setDatos }) => {
         <tbody>
           <tr>
             <td className="walletCoinColumn" id="firstRow">
-              <div className="walletCoinColumnImg">
-                <img src={signoPeso} alt="signo peso" />
-              </div>
-              <div className="walletCoinColumnName">Pesos</div>
+              <div></div>
             </td>
             <td className="walletBalance">
-              <div className="walletBalanceAmount">
-                {datos[0] && datos[0].arg}
+              <div className="walletBalanceAmount" id="walletFunding">
+                Fondear Wallet
               </div>
             </td>
             <td>
-              <button id="walletPesosButton">Ingresar $</button>
+              <button id="walletPesosButton">Comprar USDT</button>
             </td>
           </tr>
           {coins.map((row) => {
@@ -80,7 +95,7 @@ const Wallet = ({ datos, setDatos }) => {
                   </div>
                 </td>
                 <td>
-                  <button>Comprar {row.symbol.toUpperCase()}</button>
+                  <button>Swap {row.symbol.toUpperCase()}</button>
                 </td>
               </tr>
             ) : null;
@@ -92,8 +107,8 @@ const Wallet = ({ datos, setDatos }) => {
           <input
             type="number"
             placeholder="Ingrese monto"
-            onChange={addPesos}
-            value={inputPesos}
+            onChange={addUsdt}
+            value={inputUsdt}
           />
           <button onClick={onButtonClick}>Submit</button>
         </form>
