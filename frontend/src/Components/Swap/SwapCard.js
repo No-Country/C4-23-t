@@ -3,6 +3,7 @@ import '../../CSS/SwapCard.css';
 import axios from "axios";
 import { url, setHeaders } from "../../api/index.js";
 import swal from "sweetalert";
+import useTitle from '../../Utils/useTitle';
 
 
 const SwapCard = () => {
@@ -33,7 +34,7 @@ const SwapCard = () => {
         console.log(error);
       });
   };
-
+  useTitle("Swap")
 
 
   

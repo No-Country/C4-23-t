@@ -10,10 +10,9 @@ const Swap = () => {
   console.log(wallets);
   if (auth.token == null) return <Navigate to="/userLogin" />;
   return (
-    <div className="md:flex flex-row gap-[1%]">
-      <GraphicSwap />
+    
       <SwapCard />
-    </div>
+  
   );
 };
 
