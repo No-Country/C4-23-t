@@ -4,3 +4,8 @@
 .userLayoutNavBar{ 
     margin-left: 15em;
 }
+@media screen and (max-width: 800px) {
+    .userLayoutNavBar{
+        margin-left: 0;
+    }
+  }

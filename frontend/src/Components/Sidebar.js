@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import image from "../Assets/neocoin_logo.png";
 import home from "../Assets/Icon1.svg";
 import wallet from "../Assets/Wallet.svg";
@@ -7,10 +7,11 @@ import profile from "../Assets/profile.svg";
 import seetings from "../Assets/setting.svg";
 import logout from "../Assets/logout.svg";
 import { Link, Navigate } from "react-router-dom";
-import styles from "../CSS/Sidebar.module.css";
+import "../CSS/Sidebar.css";
 import { useDispatch, useSelector } from "react-redux";
 import { signOut } from "../store/actions/authActions";
 import "../CSS/TextImage.css";
+import { HamburgerIcon, ChevronLeftIcon } from "@chakra-ui/icons";
 
 const Sidebar = () => {
   const dispatch = useDispatch();
@@ -19,17 +20,30 @@ const Sidebar = () => {
     dispatch(signOut());
     if (auth.token == null) return <Navigate to="/" />;
   };
+  const [ver, setVer] = useState(false);
   return (
     <>
-      <nav className={styles.sidebar}>
-        <div className={styles.image}>
+      <botton
+        className="absolute right-1  top-6 md:hidden  z-20 "
+        onClick={() => {
+          setVer(!ver);
+        }}
+      >
+        {ver ? (
+          <ChevronLeftIcon boxSize={35} />
+        ) : (
+          <HamburgerIcon boxSize={34} />
+        )}
+      </botton>
+      <nav className={ver ? "sidebar  " : "sidebar mostrar z-30 "}>
+        <div className="image">
           <img className="imageLogo" src={image} alt="Imagenes Criptomonedas" />
         </div>
 
-        <ul className={styles.menuSidebar}>
+        <ul className="menuSidebar">
           <Link to={"/private"}>
             <li>
-              <div className={styles.icon}>
+              <div className="icon">
                 <img src={home} alt="Icono Home" />
               </div>
               <h4>Home</h4>
@@ -38,7 +52,7 @@ const Sidebar = () => {
 
           <Link to={"/private/wallet"}>
             <li>
-              <div className={styles.icon}>
+              <div className="icon">
                 <img src={wallet} alt="Icono Home" />
               </div>
               <h4>Wallet</h4>
@@ -47,7 +61,7 @@ const Sidebar = () => {
 
           <Link to={"/private/swap"}>
             <li>
-              <div className={styles.icon}>
+              <div className="icon">
                 <img src={swap} alt="Icono Home" />
               </div>
               <h4>Swap</h4>
@@ -56,7 +70,7 @@ const Sidebar = () => {
 
           {/*    <Link to={"/private/profile"}>
             <li>
-              <div className={styles.icon}>
+              <div className=icon}>
                 <img src={profile} alt="Icono Home" />
               </div>
               <h4>Profile</h4>
@@ -65,7 +79,7 @@ const Sidebar = () => {
 
           <Link to={"/private/settings"}>
             <li>
-              <div className={styles.icon}>
+              <div className="icon">
                 <img src={seetings} alt="Icono Home" />
               </div>
               <h4>Setting</h4>
@@ -73,15 +87,15 @@ const Sidebar = () => {
           </Link>
           <li>
             <button style={{ display: "row" }} onClick={() => handleSignOut()}>
-              <div className={styles.icon}>
+              <div className="icon">
                 <img src={logout} alt="Icono Home" />
               </div>
             </button>
             <h4>Logout</h4>
           </li>
         </ul>
-        <div className={styles.contentDarckLight}>
-          <h3 className={styles.darcklight}>Switch Dark/ light Theme</h3>
+        <div className="contentDarckLight">
+          <h3 className="darcklight">Switch Dark/ light Theme</h3>
         </div>
       </nav>
     </>
