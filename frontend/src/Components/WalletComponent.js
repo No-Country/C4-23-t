@@ -57,61 +57,63 @@ const Wallet = ({ datos, setDatos }) => {
 
   return (
     <div className="walletContainer">
-      <table>
-        <thead className="walletHead">
-          <tr>
-            <th>Moneda</th>
-            <th>Balance</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td className="walletCoinColumn" id="firstRow">
-              <div></div>
-            </td>
-            <td className="walletBalance">
-              <div className="walletBalanceAmount" id="walletFunding">
-                Fondear Wallet
-              </div>
-            </td>
-            <td>
-              <button id="walletPesosButton">Comprar USDT</button>
-            </td>
-          </tr>
-          {coins.map((row) => {
-            return datos[0].hasOwnProperty(row.symbol) ? (
-              <tr className="walletBody">
-                <td className="walletCoinColumn" id="walletCoins">
-                  <div className="walletCoinColumnImg">
-                    <img src={row.image} alt="coin logo" />
-                  </div>
-                  <div className="walletCoinColumnName">{row.name}</div>
-                </td>
-                <td className="walletBalance">
-                  <div>{datos[0][row.symbol]}</div>
-                  <div id="walletBalanceAmount">
-                    = ${datos[0][row.symbol] * row.current_price}
-                  </div>
-                </td>
-                <td>
-                  <button>Swap {row.symbol.toUpperCase()}</button>
-                </td>
-              </tr>
-            ) : null;
-          })}
-        </tbody>
-      </table>
-      <div className="buyPesos">
-        <form>
-          <input
-            type="number"
-            placeholder="Ingrese monto"
-            onChange={addUsdt}
-            value={inputUsdt}
-          />
-          <button onClick={onButtonClick}>Submit</button>
-        </form>
+      <div className="walletWrapper">
+        <table>
+          <thead className="walletHead">
+            <tr>
+              <th>Moneda</th>
+              <th>Balance</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="walletCoinColumn" id="firstRow">
+                <div></div>
+              </td>
+              <td className="walletBalance">
+                <div className="walletBalanceAmount" id="walletFunding">
+                  Fondear Wallet
+                </div>
+              </td>
+              <td>
+                <button id="walletPesosButton">Comprar USDT</button>
+              </td>
+            </tr>
+            {coins.map((row) => {
+              return datos[0].hasOwnProperty(row.symbol) ? (
+                <tr className="walletBody">
+                  <td className="walletCoinColumn" id="walletCoins">
+                    <div className="walletCoinColumnImg">
+                      <img src={row.image} alt="coin logo" />
+                    </div>
+                    <div className="walletCoinColumnName">{row.name}</div>
+                  </td>
+                  <td className="walletBalance">
+                    <div>{datos[0][row.symbol].toFixed(4)}</div>
+                    <div id="walletBalanceAmount">
+                      = ${(datos[0][row.symbol] * row.current_price).toFixed(4)}
+                    </div>
+                  </td>
+                  <td>
+                    <button>Swap {row.symbol.toUpperCase()}</button>
+                  </td>
+                </tr>
+              ) : null;
+            })}
+          </tbody>
+        </table>
+        <div className="buyPesos">
+          <form>
+            <input
+              type="number"
+              placeholder="Ingrese monto"
+              onChange={addUsdt}
+              value={inputUsdt}
+            />
+            <button onClick={onButtonClick}>Submit</button>
+          </form>
+        </div>
       </div>
     </div>
   );
