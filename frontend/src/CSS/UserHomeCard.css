@@ -24,9 +24,16 @@
 }
 .userCardVariation {
   border-radius: 25px;
-  background-color: #00b300;
   padding-inline: 0.25em;
   color: var(--clr-light);
+}
+
+.userCardVariationGreen {
+  background-color: #00b300;
+}
+
+.userCardVariationRed {
+  background-color: #dd0000;
 }
 
 .graphic {
