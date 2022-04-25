@@ -50,24 +50,27 @@
 
 @media screen and (max-width: 800px) {
   .sidebar {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
-    width: 15em;
+    width: 100vw;
     background-color: #dcdcdc;
     display:flex; 
-    /* aqui va display none */
     z-index: 100;
     flex-direction: column;
     padding: 1em;
     padding-right: 2em;
     transition: all 1s ease-in-out;
+    
   }
   .mostrar{
     display: flex;
-    transform: translate(-500px, 0);
+    transform: translate(-100%, 0);
     z-index: 30;
   }
-  
+  .boton {
+    z-index: 300;
+    position: fixed;
+  }
 }

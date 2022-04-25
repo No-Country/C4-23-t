@@ -24,7 +24,7 @@ const Sidebar = () => {
   return (
     <>
       <botton
-        className="absolute right-1  top-6 md:hidden  z-20 "
+        className="absolute right-1  top-6 md:hidden boton"
         onClick={() => {
           setVer(!ver);
         }}
