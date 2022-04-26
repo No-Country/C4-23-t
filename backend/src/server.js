@@ -15,6 +15,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+dotenv.config();
+
 // connect to the Db
 connectDb();
 const port = 4000;
