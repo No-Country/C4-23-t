@@ -22,6 +22,10 @@
 height: 50;
 }
 
+.navSmallScreenDiv{
+    display: hidden;
+}
+
 
 @media (max-width:800px){
     .screenNav {
