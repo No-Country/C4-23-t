@@ -13,7 +13,7 @@ function UserHomeCard(props) {
       <h2 className="userCardTitle">{cryptoCoin}</h2>
       <div className="userCardContainer">
         <h3 className="userCardPriceTag">Price</h3>
-        <h3 className={variation ? "userCardVariation userCardVariationGreen" : "userCardVariation userCardVariationRed" }>{variation}</h3>
+        <h3 className={(variation > 0 )? "userCardVariation userCardVariationGreen" : "userCardVariation userCardVariationRed" }>{variation}</h3>
       </div>
       <h2 className="userCardPrice">{price}</h2>
       <div>
