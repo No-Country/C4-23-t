@@ -30,6 +30,7 @@
   gap: 1em;
   font-size: var(--fs-body);
   padding-left: 1em;
+  align-items: center;
 }
 
 .menuSidebar li h4 {
@@ -48,6 +49,13 @@
   align-self: center;
 }
 
+.sidebarButtonLogout{
+  display: flex;
+  gap: 1em;
+  align-items: center;
+
+}
+
 @media screen and (max-width: 800px) {
   .sidebar {
     position: fixed;
@@ -62,7 +70,8 @@
     padding: 1em;
     padding-right: 2em;
     transition: all 1s ease-in-out;
-    
+
+    align-items: center;
   }
   .mostrar{
     display: flex;
@@ -72,5 +81,22 @@
   .boton {
     z-index: 300;
     position: fixed;
+    transition: transform 200ms ease-in-out;
+  }
+  .rotate {
+    transform:  rotate(540deg);
+    color: black;
+  }
+  
+  .menuSidebar{
+    justify-content: space-between;
+  }
+  .menuSidebar li {
+    margin: auto;
+    font-size: var(--fs-h1);
+  }
+
+  .menuSidebar .icon{
+    
   }
 }

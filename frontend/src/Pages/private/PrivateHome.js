@@ -94,8 +94,6 @@ const fetchData = async (url) => { //Función fetch para manejar resultados obte
       
     })
   }, [])
-console.log(coinOneChart)
-console.log(coinTwoChart)
 
 const options = {
     curveType: "function",
