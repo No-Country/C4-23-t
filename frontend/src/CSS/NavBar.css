@@ -36,11 +36,11 @@ height: 50;
     transition: all 1s ease-in-out;
     z-index:1;
     }
-    
+
     .navSpan{
         position:fixed;
         z-index: 20;
-        padding: 0.2em;
+        padding: 0.5em;
     }
 
 
