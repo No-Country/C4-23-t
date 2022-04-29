@@ -24,21 +24,19 @@ const Sidebar = () => {
     <>
       <button
         className={ver ? "absolute left-2 top-3 md:hidden boton rotate" : "absolute left-2  top-3 md:hidden boton"}
-        onClick={() => {
-          setVer(!ver);
-        }}
+        onClick={() => {setVer(!ver);}}
       >
           <ChevronRightIcon boxSize={35} />
   
       </button>
       <nav className={ver ? "sidebar  " : "sidebar mostrar z-30 "}>
-        <div className="image">
+        <div className="sidebarImage">
           <img className="imageLogo" src={image} alt="Imagenes Criptomonedas" />
         </div>
 
         <ul className="menuSidebar">
           <Link to={"/private"}>
-            <li>
+            <li onClick={() => {setVer(!ver);}}>
               <div className="icon">
                 <img src={home} alt="Icono Home" />
               </div>
@@ -47,7 +45,7 @@ const Sidebar = () => {
           </Link>
 
           <Link to={"/private/wallet"}>
-            <li>
+            <li onClick={() => {setVer(!ver);}}>
               <div className="icon">
                 <img src={wallet} alt="Icono Home" />
               </div>
@@ -56,7 +54,7 @@ const Sidebar = () => {
           </Link>
 
           <Link to={"/private/swap"}>
-            <li>
+            <li onClick={() => {setVer(!ver);}}>
               <div className="icon">
                 <img src={swap} alt="Icono Home" />
               </div>
@@ -74,7 +72,7 @@ const Sidebar = () => {
           </Link> */}
 
           <Link to={"/private/settings"}>
-            <li>
+            <li onClick={() => {setVer(!ver);}}>
               <div className="icon">
                 <img src={seetings} alt="Icono Home" />
               </div>

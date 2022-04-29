@@ -7,6 +7,10 @@
 .navDiv{
     z-index: 20;
 }
+
+.navDiv img{
+    margin-top: 0.5em;
+}
 .navBar-logoSubtitle{
     padding-right: 3em;
     margin-right: 0;
@@ -40,7 +44,7 @@ height: 50;
     .navSpan{
         position:fixed;
         z-index: 20;
-        padding: 0.5em;
+        padding: 0.7em;
     }
 
 
