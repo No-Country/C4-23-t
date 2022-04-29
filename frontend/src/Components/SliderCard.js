@@ -24,7 +24,7 @@ export default function SliderCard() {
     }, 4000);
     return () => clearInterval(interval);
   }, [next]);
-
+  console.log(next);
   const changeNext = () => {
     if (next === 3) {
       setNext(1);
@@ -32,24 +32,34 @@ export default function SliderCard() {
       setNext(next + 1);
     }
   };
+  const changeBack = () => {
+    if (next === 1) {
+      setNext(3);
+    } else {
+      setNext(next - 1);
+    }
+  };
+
   console.log(next);
   return (
     <section>
-      <div className="w-full relative flex justify-center items-center my-5 sm:py-10">
+      <div className="w-full h-screen relative flex justify-center items-center my-5 sm:py-10">
         <img
           src={imgSlider}
           alt="fondo"
-          className="w-screen h-[350px] sm:h-screen shadow-lg rounded-[40px]"
+          className="w-screen h-screen shadow-lg rounded-[40px]"
         />
         <h1 className="absolute -top-4 text-[#1A69B4] font-bold text-lg sm:text-4xl text-center px-4">
           ¿Quiénes son los integrantes de nuestro equipo?
         </h1>
-        {/* cuando el usuario esté en movil */}
-        <SliderMobil />
+
         {/* sm:max esto se ejecuta cuando las pantalla eas grande*/}
-        <div className="hidden sm:flex sm:flex-col absolute  sm:items-center sm:gap-6">
+        <div className="flex flex-col absolute  items-center gap-6">
           <div className="top-1/4 right-1/3 md:top-4 md:right-8 md:absolute">
-            <button className=" text-[#1A69B4] font-bold py-2 px-4 rounded-full">
+            <button
+              onClick={changeBack}
+              className=" text-[#1A69B4] font-bold py-2 px-4 rounded-full"
+            >
               <ArrowBackIcon mt={30} w={30} h={30} boxSize={80} />
             </button>
             {/* boton de back */}
@@ -68,7 +78,9 @@ export default function SliderCard() {
           >
             <UserCard
               dev={"FULLSTACK UI/UX"}
-              text={"Dedicación, constancia y organización son claves para el éxito del proyecto"}
+              text={
+                "Dedicación, constancia y organización son claves para el éxito del proyecto"
+              }
               imageUrl={imgPablo}
               name={"Pablo Vieyra"}
             />
@@ -77,7 +89,9 @@ export default function SliderCard() {
           <div className={next === 1 ? "md:ml-96 shadow-2xl" : "hidden"}>
             <UserCard
               dev={"FULLSTACK DEVELOPER"}
-              text={"La comunicación y el trabajo en equipo es fundamental para llevar a cabo un proyecto"}
+              text={
+                "La comunicación y el trabajo en equipo es fundamental para llevar a cabo un proyecto"
+              }
               imageUrl={imgPedro}
               name={"Pedro Acosta"}
             />
@@ -91,7 +105,9 @@ export default function SliderCard() {
           >
             <UserCard
               dev={"FULLSTACK DEVELOPER"}
-              text={"Aprender de otros desarrolladores es un privilegio que muy pocos valoran"}
+              text={
+                "Aprender de otros desarrolladores es un privilegio que muy pocos valoran"
+              }
               imageUrl={imgMartin}
               name={"Martín Castro"}
             />
@@ -100,7 +116,9 @@ export default function SliderCard() {
           <div className={next === 2 ? "md:ml-96 shadow-2xl" : "hidden"}>
             <UserCard
               dev={"FULLSTACK TESTER"}
-              text={"Un buen desarrollo y buena estética hacen brillar cualquier proyecto"}
+              text={
+                "Un buen desarrollo y buena estética hacen brillar cualquier proyecto"
+              }
               imageUrl={imgJulian}
               name={"Julian Marc"}
             />
@@ -114,7 +132,9 @@ export default function SliderCard() {
           >
             <UserCard
               dev={"FULLSTACK DEVELOPER"}
-              text={"Da lo mejor de ti en cada asignación, por muy fácil o difícil que resulte"}
+              text={
+                "Da lo mejor de ti en cada asignación, por muy fácil o difícil que resulte"
+              }
               imageUrl={imgEdu}
               name={"Edu Falcón"}
             />
@@ -123,7 +143,9 @@ export default function SliderCard() {
           <div className={next === 3 ? "md:ml-96 shadow-2xl" : "hidden"}>
             <UserCard
               dev={"FRONTEND DEVELOPER"}
-              text={"Estar en un gran equipo de trabajo hace que queramos esforzarnos cada día"}
+              text={
+                "Estar en un gran equipo de trabajo hace que queramos esforzarnos cada día"
+              }
               imageUrl={imgMike}
               name={"Miguel Briceño"}
             />

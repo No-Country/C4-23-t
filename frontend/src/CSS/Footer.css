@@ -13,7 +13,6 @@
   width: 100%;
 }
 
-
 .footerImageWrapper {
   height: 60px;
 }
@@ -22,6 +21,11 @@
   max-height: 100%;
 }
 
+.socialWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
 .socialWrapper h2 {
-  
+  font-size: 1.5em;
 }
