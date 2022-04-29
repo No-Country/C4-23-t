@@ -15,7 +15,7 @@ const NavBar = () => {
     <nav className="md:flex md:items-center md:justify-between text-sky-600 nav">
       <div className="navDiv">
         <img
-          className="h-10 inline mx-2"
+          className="h-10 inline mx-6"
           src={image}
           alt="Imagenes Criptomonedas"
         />

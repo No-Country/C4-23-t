@@ -18,7 +18,9 @@ const UserLayout = ({ children }) => {
         <div className="userLayoutNavBar">
           <TitleContext.Provider value={{title, setTitle}} >
             <UserNavBar/>
+            <div className='userLayoutChildren'>
             {children}
+            </div>
             </TitleContext.Provider>
         </div>
     </div>
