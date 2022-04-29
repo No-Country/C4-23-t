@@ -24,13 +24,7 @@ const Sidebar = () => {
     <>
       <button
         className={ver ? "absolute left-2 top-3 md:hidden boton rotate" : "absolute left-2  top-3 md:hidden boton"}
-<<<<<<< HEAD
         onClick={() => {setVer(!ver);}}
-=======
-        onClick={() => {
-          setVer(!ver);
-        }}
->>>>>>> 646e29d (Responsive Sidebar private y mas chauchas)
       >
           <ChevronRightIcon boxSize={35} />
   
