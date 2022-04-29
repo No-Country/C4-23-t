@@ -109,9 +109,9 @@ const options = {
     <div className="PrivateHome">
       <h3 className="privateHomeTitle">Tendencias</h3>
       <div className="privateHomeContainer">
-       <UserHomeCard cryptoCoin={coinsName[0] && coinsName[0].symbol} price={coinOne[Object.keys(coinOne)[0]] && coinOne[Object.keys(coinOne)[0]].ars} variation={coinOne[Object.keys(coinOne)[0]] && coinOne[Object.keys(coinOne)[0]].ars_24h_change.toFixed(3)} optionsCard={options} dataCard={coinOneChart}/>
-        <UserHomeCard cryptoCoin={coinsName[1] && coinsName[1].symbol} price={coinTwo[Object.keys(coinTwo)[0]] && coinTwo[Object.keys(coinTwo)[0]].ars} variation={coinTwo[Object.keys(coinTwo)[0]] && coinTwo[Object.keys(coinTwo)[0]].ars_24h_change.toFixed(3)} optionsCard={options} dataCard={coinTwoChart}/>
-        <UserHomeCard cryptoCoin={coinsName[2] && coinsName[2].symbol} price={coinThree[Object.keys(coinThree)[0]] && coinThree[Object.keys(coinThree)[0]].ars} variation={coinThree[Object.keys(coinThree)[0]] && coinThree[Object.keys(coinThree)[0]].ars_24h_change.toFixed(3)} optionsCard={options} dataCard={coinThreeChart}/>
+       <UserHomeCard cryptoCoin={coinsName[0]?.symbol} price={coinOne[Object.keys(coinOne)[0]]?.ars} variation={coinOne[Object.keys(coinOne)[0]]?.ars_24h_change.toFixed(3)} optionsCard={options} dataCard={coinOneChart}/>
+        <UserHomeCard cryptoCoin={coinsName[1]?.symbol} price={coinTwo[Object.keys(coinTwo)[0]]?.ars} variation={coinTwo[Object.keys(coinTwo)[0]]?.ars_24h_change.toFixed(3)} optionsCard={options} dataCard={coinTwoChart}/>
+        <UserHomeCard cryptoCoin={coinsName[2]?.symbol} price={coinThree[Object.keys(coinThree)[0]]?.ars} variation={coinThree[Object.keys(coinThree)[0]]?.ars_24h_change.toFixed(3)} optionsCard={options} dataCard={coinThreeChart}/>
       </div>
       <h3 className="title">Noticias</h3>
       <h4 className="subtitle">Proximamente......</h4>
