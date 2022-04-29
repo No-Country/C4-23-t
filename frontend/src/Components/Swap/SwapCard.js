@@ -26,7 +26,7 @@ const SwapCard = () => {
       timer: "3500",
     });
   };
-  const updatedWallet = (updatedWallet, id) => {
+  const updatedWallet = async (updatedWallet, id) => {
     return axios
       .put(`${url}/wallet/${id}`, updatedWallet, setHeaders())
       .catch((error) => {
