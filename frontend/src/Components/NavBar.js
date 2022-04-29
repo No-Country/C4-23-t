@@ -13,7 +13,7 @@ const NavBar = () => {
 
   return (
     <nav className="md:flex md:items-center md:justify-between text-sky-600 nav">
-      <div className="">
+      <div className="navDiv">
         <img
           className="h-10 inline mx-2"
           src={image}

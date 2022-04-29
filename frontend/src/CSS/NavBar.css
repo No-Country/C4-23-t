@@ -1,8 +1,12 @@
 .nav {
-    z-index: 2;
+    z-index: 20;
     background-color: var(--clr-light);
+    position: relative;
 }
 
+.navDiv{
+    z-index: 20;
+}
 .navBar-logoSubtitle{
     padding-right: 3em;
     margin-right: 0;
@@ -26,7 +30,7 @@ height: 50;
     position: fixed;
     background-color: var(--clr-light);
     transition: all 1s ease-in-out;
-    z-index: 0;
+    z-index:1;
     }
 
     .navSpan{
@@ -35,15 +39,26 @@ height: 50;
         padding: 0.2em;
     }
 
+
     .nav{
         width: 100vw;
         z-index: 10;
         background-color: var(--clr-light);
         position: fixed;
-        box-shadow: var(--bs);
+        
+        
     }
     .navLink {
         font-size: var(--fs-h1);
+    }
+
+    .navDiv{
+        background-color: var(--clr-light);
+        position: sticky;
+        box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.726);
+        padding-bottom: 0.5em;
+        
+        
     }
 
     .navButton {
@@ -56,5 +71,9 @@ height: 50;
 
     .navCerrado{
         transform: translateY(-110%);
+    }
+
+    .navSmallScreenDiv{
+        height: 2.7em;
     }
 }
