@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import NewWallet from "../../Components/NewWallet";
 import Wallet from "../../Components/WalletComponent";
-import { getWallet } from "../../store/actions/walletActions";
 import axios from "axios";
 import { url, setHeaders } from "../../api/index.js";
+import { TitleContext } from "../../Components/UserLayout";
 
 const WalletPage = () => {
+
+  const {setTitle} = useContext(TitleContext)
   const [datos, setDatos] = useState({});
 
   const getData = async () => {
@@ -22,6 +24,8 @@ const WalletPage = () => {
 
   useEffect(() => {
     getData();
+    
+    setTitle("Wallet")  
   }, []);
 
   const [walletM, setWalletM] = useState({

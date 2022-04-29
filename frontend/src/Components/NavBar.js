@@ -22,7 +22,7 @@ const NavBar = () => {
         <h4 className="text-xs mx-10 navBar-logoSubtitle">CRYPTOCURRENCY EXCHANGE</h4>
         <span
           onClick={seeMenu}
-          className="cursor-pointer text-3xl md:hidden block text-center absolute top-0 right-3"
+          className="cursor-pointer text-3xl md:hidden block text-center absolute top-0 right-3 navSpan"
         >
           <ion-icon name="menu-outline"></ion-icon>
         </span>
@@ -31,8 +31,8 @@ const NavBar = () => {
       <ul
         className={
           menu
-            ? "hidden md:flex md:items-center  justify-center items-center flex-col md:flex-row"
-            : "md:flex md:items-center flex justify-around items-center flex-col md:flex-row smallScreenNav"
+            ? "md:flex md:items-center flex justify-around items-center flex-col md:flex-row screenNav navCerrado"
+            : "md:flex md:items-center flex justify-around items-center flex-col md:flex-row screenNav navAbierto"
         }
       >
         <Link to={"/"} onClick={seeMenu}>

@@ -20,16 +20,27 @@ height: 50;
 
 
 @media (max-width:800px){
-    .smallScreenNav {
+    .screenNav {
     width: 99vw;
     height: 100vh;
     position: fixed;
     background-color: var(--clr-light);
+    transition: all 1s ease-in-out;
+    z-index: 0;
+    }
+
+    .navSpan{
+        position:fixed;
+        z-index: 20;
+        padding: 0.2em;
     }
 
     .nav{
-        position: fixed;
         width: 100vw;
+        z-index: 10;
+        background-color: var(--clr-light);
+        position: fixed;
+        box-shadow: var(--bs);
     }
     .navLink {
         font-size: var(--fs-h1);
@@ -39,6 +50,11 @@ height: 50;
         font-size: var(--fs-h1);
         margin-bottom: 1em;
     }
+    .navAbierto{
+        transform: translateY(0);
+    }
 
-    
+    .navCerrado{
+        transform: translateY(-110%);
+    }
 }
