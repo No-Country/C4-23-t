@@ -36,18 +36,16 @@ height: 50;
     .navSpan{
         position:fixed;
         z-index: 20;
-        padding: 0.2em;
+        padding: 0.5em;
     }
-
 
     .nav{
         width: 100vw;
         z-index: 10;
         background-color: var(--clr-light);
         position: fixed;
-        
-        
     }
+
     .navLink {
         font-size: var(--fs-h1);
     }
