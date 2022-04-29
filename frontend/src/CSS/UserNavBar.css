@@ -8,8 +8,29 @@
     padding-top: 0.5em;
     gap: 0.5em;
     align-items: center;
+ 
 }
 
 .messageLogo{
     margin-left: auto;
+}
+
+@media (max-width:800px) {
+    .userLayoutChildren{
+        margin-top:5em
+    }
+
+    .userHeader {
+        position: fixed;
+        padding-left: 1.5em; 
+        top: 0;
+        z-index: 5;
+        width: 100vw;
+        box-shadow: 0 0.25em 0.3em rgba(0, 0, 0, 0.226);
+        padding-block: 0.1em;
+    }
+
+
+
+    
 }

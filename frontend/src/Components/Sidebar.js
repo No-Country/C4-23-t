@@ -3,7 +3,6 @@ import image from "../Assets/neocoin_logo.png";
 import home from "../Assets/Icon1.svg";
 import wallet from "../Assets/Wallet.svg";
 import swap from "../Assets/swap.svg";
-import profile from "../Assets/profile.svg";
 import seetings from "../Assets/setting.svg";
 import logout from "../Assets/logout.svg";
 import { Link, Navigate } from "react-router-dom";
@@ -11,7 +10,7 @@ import "../CSS/Sidebar.css";
 import { useDispatch, useSelector } from "react-redux";
 import { signOut } from "../store/actions/authActions";
 import "../CSS/TextImage.css";
-import { HamburgerIcon, ChevronLeftIcon } from "@chakra-ui/icons";
+import { ChevronRightIcon, ChevronLeftIcon } from "@chakra-ui/icons";
 
 const Sidebar = () => {
   const dispatch = useDispatch();
@@ -23,26 +22,21 @@ const Sidebar = () => {
   const [ver, setVer] = useState(false);
   return (
     <>
-      <botton
-        className="absolute right-1  top-6 md:hidden boton"
-        onClick={() => {
-          setVer(!ver);
-        }}
+      <button
+        className={ver ? "absolute left-2 top-3 md:hidden boton rotate" : "absolute left-2  top-3 md:hidden boton"}
+        onClick={() => {setVer(!ver);}}
       >
-        {ver ? (
-          <ChevronLeftIcon boxSize={35} />
-        ) : (
-          <HamburgerIcon boxSize={34} />
-        )}
-      </botton>
+          <ChevronRightIcon boxSize={35} />
+  
+      </button>
       <nav className={ver ? "sidebar  " : "sidebar mostrar z-30 "}>
-        <div className="image">
+        <div className="sidebarImage">
           <img className="imageLogo" src={image} alt="Imagenes Criptomonedas" />
         </div>
 
         <ul className="menuSidebar">
           <Link to={"/private"}>
-            <li>
+            <li onClick={() => {setVer(!ver);}}>
               <div className="icon">
                 <img src={home} alt="Icono Home" />
               </div>
@@ -51,7 +45,7 @@ const Sidebar = () => {
           </Link>
 
           <Link to={"/private/wallet"}>
-            <li>
+            <li onClick={() => {setVer(!ver);}}>
               <div className="icon">
                 <img src={wallet} alt="Icono Home" />
               </div>
@@ -60,7 +54,7 @@ const Sidebar = () => {
           </Link>
 
           <Link to={"/private/swap"}>
-            <li>
+            <li onClick={() => {setVer(!ver);}}>
               <div className="icon">
                 <img src={swap} alt="Icono Home" />
               </div>
@@ -78,21 +72,22 @@ const Sidebar = () => {
           </Link> */}
 
           <Link to={"/private/settings"}>
-            <li>
+            <li onClick={() => {setVer(!ver);}}>
               <div className="icon">
                 <img src={seetings} alt="Icono Home" />
               </div>
               <h4>Setting</h4>
             </li>
           </Link>
-          <li>
-            <button style={{ display: "row" }} onClick={() => handleSignOut()}>
-              <div className="icon">
-                <img src={logout} alt="Icono Home" />
-              </div>
-            </button>
-            <h4>Logout</h4>
-          </li>
+            <li>
+              <button className="sidebarButtonLogout" style={{ display: "row" }} onClick={() => handleSignOut()}>
+                <div className="icon">
+                  <img src={logout} alt="Icono Home" />
+                </div>
+              
+              <h4>Logout</h4>
+              </button>
+            </li>
         </ul>
         <div className="contentDarckLight">
           <h3 className="darcklight">Switch Dark/ light Theme</h3>

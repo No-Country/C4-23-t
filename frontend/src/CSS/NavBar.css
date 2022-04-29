@@ -7,6 +7,10 @@
 .navDiv{
     z-index: 20;
 }
+
+.navDiv img{
+    margin-top: 0.5em;
+}
 .navBar-logoSubtitle{
     padding-right: 3em;
     margin-right: 0;
@@ -29,24 +33,23 @@ height: 50;
 
 @media (max-width:800px){
     .screenNav {
-    width: 99vw;
-    height: 100vh;
-    position: fixed;
-    background-color: var(--clr-light);
-    transition: all 1s ease-in-out;
-    z-index:1;
+        width: 99vw;
+        height: 100vh;
+        position: fixed;
+        background-color: var(--clr-light);
+        transition: all 1s ease-in-out;
+        z-index:1;
     }
 
     .navSpan{
         position:fixed;
         z-index: 20;
-        padding: 0.5em;
+        padding: 0.7em;
     }
 
 
     .nav{
         width: 100vw;
-        z-index: 10;
         background-color: var(--clr-light);
         position: fixed;
         
@@ -59,7 +62,7 @@ height: 50;
     .navDiv{
         background-color: var(--clr-light);
         position: sticky;
-        box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.726);
+        box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.226);
         padding-bottom: 0.5em;
         
         
@@ -78,6 +81,6 @@ height: 50;
     }
 
     .navSmallScreenDiv{
-        height: 2.7em;
+        height: 3em;
     }
 }

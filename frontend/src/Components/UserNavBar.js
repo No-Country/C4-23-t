@@ -6,6 +6,7 @@ import { TitleContext } from "./UserLayout";
 
 export default function UserNavBar() {
   const {title} = useContext(TitleContext)
+  document.title = "Neocoin - " + title;
   return (
     <nav className="userHeader">
       <h1 className="userHeaderTItle">{title}</h1>
