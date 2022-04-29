@@ -13,7 +13,7 @@
   padding-right: 2em;
 }
 
-.image {
+.sidebarImage {
   margin-bottom: 2em;
   align-self: center;
 }
@@ -88,15 +88,20 @@
     color: black;
   }
   
-  .menuSidebar{
-    justify-content: space-between;
-  }
   .menuSidebar li {
     margin: auto;
     font-size: var(--fs-h1);
+    margin-left: -1em;
   }
 
-  .menuSidebar .icon{
-    
+  .sidebarImage {
+    margin-bottom: 2em;
+    align-self: center;
+    width: 70%;
   }
+
+  .icon img{
+   width: 1em;
+  }
+
 }
