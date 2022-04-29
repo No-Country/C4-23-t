@@ -1,14 +1,15 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect, useContext} from "react";
 import logoHome from "../../Assets/logoHome.svg";
 import "../../CSS/PrivateHome.css";
 import UserHomeCard from "../../Components/UserHomeCard";
-
-import useTitle from "../../Utils/useTitle";
 import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { TitleContext } from "../../Components/UserLayout";
+
 
 const PrivateHome = () => {
-  useTitle("Home")
+  const {setTitle} = useContext(TitleContext)
+  setTitle("Home")
   const auth = useSelector((state) => state.auth);
   const [coinsName, getCoinsName] = useState([])
   const [coinOne, getCoinOne] = useState([])
