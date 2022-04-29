@@ -103,5 +103,8 @@
   .icon img{
    width: 1em;
   }
-
+  .contentDarckLight {
+    font-size: var(--fs-h3);
+    margin-top: 1em;
+  }
 }
