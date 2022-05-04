@@ -4,7 +4,7 @@ import "../CSS/Home.css";
 import img1 from "../Assets/pngegg.png";
 import img2 from "../Assets/securuty.png";
 import img3 from "../Assets/homeFoto.png";
-import img4 from "../Assets/NewTextDocument.svg";
+import img4 from "../Assets/dataAnalytics.png";
 
 export default function Home() {
   const text1 = "NeoCoin la mejor manera de comprar cripto";
