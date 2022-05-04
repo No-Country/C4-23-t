@@ -3,8 +3,8 @@ import React from 'react';
 const SectionAboutUs = () => {
   return (
     <section className="bg-[#FAFAFA]">
-      <div className="container flex flex-col justify-center p-6 mx-auto sm:py-8 lg:py-20 lg:flex-row lg:justify-between">
-        <div className="flex flex-col justify-center p-6 mx-10 text-center rounded-sm lg:max-w-md lg:max-w-xl xl:max-w-xl lg:text-left">
+      <div className=" min-h-full min-w-full flex flex-col justify-center p-6 mx-auto sm:py-8 lg:py-20 lg:flex-row lg:justify-between">
+        <div className=" flex flex-col justify-center p-6 mx-10 text-center rounded-sm lg:max-w-md lg:max-w-xl xl:max-w-xl lg:text-left">
           <h1 className="text-5xl font-bold leading-none sm:text-6xl text-[#1A69B4]">
             Desde 2022 cuidando tus
             <span className="dark:text-blue-400"> criptos </span>para que puedas

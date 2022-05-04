@@ -7,9 +7,10 @@ import imgMartin from "../Assets/martincastro.jpg";
 import imgMike from "../Assets/miguelbriceno.jpg";
 import imgEdu from "../Assets/edufalcon.webp";
 import imgSlider from "../Assets/imgSlider.png";
+import "../CSS/SliderCard.css"
 
 import { ArrowForwardIcon, ArrowBackIcon } from "@chakra-ui/icons";
-import { SliderMobil } from "./SliderMobil";
+
 
 export default function SliderCard() {
   const [next, setNext] = useState(1);
@@ -24,7 +25,9 @@ export default function SliderCard() {
     }, 4000);
     return () => clearInterval(interval);
   }, [next]);
+
   console.log(next);
+  
   const changeNext = () => {
     if (next === 3) {
       setNext(1);
@@ -32,6 +35,7 @@ export default function SliderCard() {
       setNext(next + 1);
     }
   };
+  
   const changeBack = () => {
     if (next === 1) {
       setNext(3);
@@ -42,30 +46,26 @@ export default function SliderCard() {
 
   console.log(next);
   return (
-    <section>
-      <div className="w-full h-screen relative flex justify-center items-center my-5 sm:py-10">
-        <img
-          src={imgSlider}
-          alt="fondo"
-          className="w-screen h-screen shadow-lg rounded-[40px]"
-        />
-        <h1 className="absolute -top-4 text-[#1A69B4] font-bold text-lg sm:text-4xl text-center px-4">
+
+      <div className="relative  my-5 sm:py-10  shadow-2xl rounded-3xl ">
+
+        <h1 className="text-[#1A69B4] font-bold text-lg sm:text-4xl text-center px-2mb-2 ">
           ¿Quiénes son los integrantes de nuestro equipo?
         </h1>
 
         {/* sm:max esto se ejecuta cuando las pantalla eas grande*/}
-        <div className="flex flex-col absolute  items-center gap-6">
-          <div className="top-1/4 right-1/3 md:top-4 md:right-8 md:absolute">
+        <div className="flex flex-col  sliderCard items-center gap-6 pb-8">
+          <div className="md:absolute right-0 md:ml-auto md:pr-[25%] ">
             <button
               onClick={changeBack}
-              className=" text-[#1A69B4] font-bold py-2 px-4 rounded-full"
+              className=" text-[#1A69B4] font-bold     rounded-full"
             >
               <ArrowBackIcon mt={30} w={30} h={30} boxSize={80} />
             </button>
             {/* boton de back */}
             <button
               onClick={changeNext}
-              className=" text-[#1A69B4] font-bold py-2 px-4 rounded-full"
+              className=" text-[#1A69B4] font-bold  rounded-full"
             >
               <ArrowForwardIcon mt={30} w={30} h={30} boxSize={80} />
             </button>
@@ -73,7 +73,7 @@ export default function SliderCard() {
           {/* las primeras cards */}
           <div
             className={
-              next === 1 ? "md:translate-x-[-200px] shadow-2xl" : "hidden"
+              next === 1 ? "md:self-start md:ml-[9%] xl:ml-[25%]" : "hidden"
             }
           >
             <UserCard
@@ -86,7 +86,7 @@ export default function SliderCard() {
             />
             {/* <-------------- 1  */}
           </div>
-          <div className={next === 1 ? "md:ml-96 shadow-2xl" : "hidden"}>
+          <div className={next === 1 ? "md:self-end xl:mr-[25%] md:mr-[9%]" : "hidden"}>
             <UserCard
               dev={"FULLSTACK DEVELOPER"}
               text={
@@ -100,7 +100,7 @@ export default function SliderCard() {
           {/* las segundas cards */}
           <div
             className={
-              next === 2 ? "md:translate-x-[-200px] shadow-2xl" : "hidden"
+              next === 2 ? "md:self-start md:ml-[9%] xl:ml-[25%]" : "hidden"
             }
           >
             <UserCard
@@ -113,7 +113,7 @@ export default function SliderCard() {
             />
             {/* <-------------- 3  */}
           </div>
-          <div className={next === 2 ? "md:ml-96 shadow-2xl" : "hidden"}>
+          <div className={next === 2 ? "md:self-end xl:mr-[25%] md:mr-[9%]" : "hidden"}>
             <UserCard
               dev={"FULLSTACK TESTER"}
               text={
@@ -127,7 +127,7 @@ export default function SliderCard() {
           {/* las terceras cards */}
           <div
             className={
-              next === 3 ? "md:translate-x-[-200px] shadow-2xl" : "hidden"
+              next === 3 ? "md:self-start md:ml-[9%] xl:ml-[25%]" : "hidden"
             }
           >
             <UserCard
@@ -140,7 +140,7 @@ export default function SliderCard() {
             />
             {/* <-------------- 5  */}
           </div>
-          <div className={next === 3 ? "md:ml-96 shadow-2xl" : "hidden"}>
+          <div className={next === 3 ? "md:self-end xl:mr-[25%] md:mr-[9%]" : "hidden"}>
             <UserCard
               dev={"FRONTEND DEVELOPER"}
               text={
@@ -153,6 +153,5 @@ export default function SliderCard() {
           </div>
         </div>
       </div>
-    </section>
   );
 }
