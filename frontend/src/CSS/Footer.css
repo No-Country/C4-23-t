@@ -18,7 +18,8 @@
 }
 
 .footerImageWrapper img {
-  max-height: 100%;
+  margin: 5%;
+  max-height: 80%;
 }
 
 .socialWrapper {
@@ -27,5 +28,12 @@
   gap: 1em;
 }
 .socialWrapper h2 {
+  display: none;
   font-size: 1.5em;
+}
+
+@media (min-width: 640px) {
+  .socialWrapper h2 {
+    display: block;
+  }
 }

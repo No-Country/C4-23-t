@@ -1,16 +1,17 @@
 import React from 'react';
+import imgTeam from '../Assets/team.png'
 
 const SectionAboutUs = () => {
   return (
     <section className="bg-[#FAFAFA]">
-      <div className=" min-h-full min-w-full flex flex-col justify-center p-6 mx-auto sm:py-8 lg:py-20 lg:flex-row lg:justify-between">
-        <div className=" flex flex-col justify-center p-6 mx-10 text-center rounded-sm lg:max-w-md lg:max-w-xl xl:max-w-xl lg:text-left">
-          <h1 className="text-5xl font-bold leading-none sm:text-6xl text-[#1A69B4]">
+      <aside className=" min-h-full min-w-full flex flex-col justify-center p-6 mx-auto sm:py-8 lg:pt-4 lg:flex-row lg:justify-between">
+        <div className="flex flex-col justify-center pt-[5%] mx-10 text-center lg:max-w-xl lg:text-left">
+          <h1 className="text-3xl font-bold sm:text-6xl text-[#1A69B4]">
             Desde 2022 cuidando tus
             <span className="dark:text-blue-400"> criptos </span>para que puedas
             ahorrar e invertir más fácilmente
           </h1>
-          <p className="mt-6 mb-8 text-lg dark:text-blue-400 sm:mb-12">
+          <p className="hidden sm:block mt-6 mb-8 text-2xl dark:text-blue-400 sm:mb-12">
             Nuestro objetivo es proporcionarte rapidez, comodidad y sobretodo
             seguridad.
             <br />
@@ -23,14 +24,14 @@ const SectionAboutUs = () => {
               Analytics</a>
           </div>
         </div>
-        <div className="flex items-center justify-center p-1 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128\">
+        <div className="flex items-center justify-center mt-8 lg:mt-0">
           <img
-            src="https://cdn.goconqr.com/uploads/media/image/31223372/desktop_d7b48597-53f0-4457-911d-b322f7fade11.png"
+            src={imgTeam}
             alt="TeamWork"
-            className="object-cover sm:h-80 lg:h-96 xl:h-112 2xl:h-128 w-screen "
+            className="object-cover"
           />
         </div>
-      </div>
+      </aside>
     </section>
   )
 }

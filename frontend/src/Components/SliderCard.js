@@ -47,25 +47,25 @@ export default function SliderCard() {
   console.log(next);
   return (
 
-      <div className="relative  my-5 sm:py-10  shadow-2xl rounded-3xl ">
+      <div className="relative pt-8 shadow-2xl rounded-3xl ">
 
-        <h1 className="text-[#1A69B4] font-bold text-lg sm:text-4xl text-center px-2mb-2 ">
+        <h1 className="text-[#1A69B4] font-bold text-lg sm:text-4xl text-center px-4 pb-[5%] ">
           ¿Quiénes son los integrantes de nuestro equipo?
         </h1>
 
         {/* sm:max esto se ejecuta cuando las pantalla eas grande*/}
-        <div className="flex flex-col  sliderCard items-center gap-6 pb-8">
-          <div className="md:absolute right-0 md:ml-auto md:pr-[25%] ">
+        <div className="flex flex-col  sliderCard items-center gap-6 pb-12">
+          <div className="md:absolute md:left-[70%] md:inset-y-1/4 ">
             <button
               onClick={changeBack}
-              className=" text-[#1A69B4] font-bold     rounded-full"
+              className=" text-[#1A69B4] font-bold rounded-full"
             >
               <ArrowBackIcon mt={30} w={30} h={30} boxSize={80} />
             </button>
             {/* boton de back */}
             <button
               onClick={changeNext}
-              className=" text-[#1A69B4] font-bold  rounded-full"
+              className=" text-[#1A69B4] font-bold rounded-full"
             >
               <ArrowForwardIcon mt={30} w={30} h={30} boxSize={80} />
             </button>
