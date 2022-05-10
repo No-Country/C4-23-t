@@ -6,6 +6,8 @@ import imgJulian from "../Assets/julianmarc.jpg";
 import imgMartin from "../Assets/martincastro.jpg";
 import imgMike from "../Assets/miguelbriceno.jpg";
 import imgEdu from "../Assets/edufalcon.webp";
+import imgLinkedIn from "../Assets/linked-in-alt.svg"
+import imgGithub from "../Assets/github-dark.svg"
 import imgSlider from "../Assets/imgSlider.png";
 import "../CSS/SliderCard.css"
 
@@ -83,6 +85,8 @@ export default function SliderCard() {
               }
               imageUrl={imgPablo}
               name={"Pablo Vieyra"}
+              linkedIn={<a href="https://www.linkedin.com/in/pablo-vieyra/" target="_blank" rel="noreferrer noopener"><img alt='linkedIn' src={imgLinkedIn} width="25" /></a>}
+              github={<a href="https://github.com/pabloVieyra" target="_blank" rel="noreferrer noopener"><img alt='Github' src={imgGithub} width="30" /></a>}
             />
             {/* <-------------- 1  */}
           </div>
@@ -94,6 +98,8 @@ export default function SliderCard() {
               }
               imageUrl={imgPedro}
               name={"Pedro Acosta"}
+              linkedIn={<a href="https://www.linkedin.com/in/pevacosta/" target="_blank" rel="noreferrer noopener"><img alt='linkedIn' src={imgLinkedIn} width="25" /></a>}
+              github={<a href="https://github.com/Yandalar"><img alt='Github' src={imgGithub} width="30" /></a>}
             />
             {/* <-------------- 2  */}
           </div>
@@ -110,6 +116,8 @@ export default function SliderCard() {
               }
               imageUrl={imgMartin}
               name={"Martín Castro"}
+              linkedIn={<a href="https://www.linkedin.com/in/m-l-castro/" target="_blank" rel="noreferrer noopener"><img alt='linkedIn' src={imgLinkedIn} width="25" /></a>}
+              github={<a href="https://github.com/mlcas" target="_blank" rel="noreferrer noopener"><img alt='Github' src={imgGithub} width="30" /></a>}
             />
             {/* <-------------- 3  */}
           </div>
@@ -121,6 +129,8 @@ export default function SliderCard() {
               }
               imageUrl={imgJulian}
               name={"Julian Marc"}
+              linkedIn={<a href="https://www.linkedin.com/in/julianmarc/" target="_blank" rel="noreferrer noopener"><img alt='linkedIn' src={imgLinkedIn} width="25" /></a>}
+              github={<a href="https://github.com/R4vage" target="_blank" rel="noreferrer noopener"><img alt='Github' src={imgGithub} width="30" /></a>}
             />
             {/* <-------------- 4  */}
           </div>
@@ -137,6 +147,8 @@ export default function SliderCard() {
               }
               imageUrl={imgEdu}
               name={"Edu Falcón"}
+              linkedIn={<a href="https://www.linkedin.com/in/eliseodev/" target="_blank" rel="noreferrer noopener"><img alt='linkedIn' src={imgLinkedIn} width="25" /></a>}
+              github={<a href="https://github.com/Eliseonop" target="_blank" rel="noreferrer noopener"><img alt='Github' src={imgGithub} width="30" /></a>}
             />
             {/* <-------------- 5  */}
           </div>
@@ -148,6 +160,8 @@ export default function SliderCard() {
               }
               imageUrl={imgMike}
               name={"Miguel Briceño"}
+              linkedIn={<a href="https://www.linkedin.com/in/miguelbricenodev/" target="_blank" rel="noreferrer noopener"><img alt='linkedIn' src={imgLinkedIn} width="25" /></a>}
+              github={<a href="https://www.github.com/mikejbp/" target="_blank" rel="noreferrer noopener"><img alt='Github' src={imgGithub} width="30" /></a>}
             />
             {/* <-------------- 6  */}
           </div>
