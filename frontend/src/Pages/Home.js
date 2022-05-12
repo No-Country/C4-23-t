@@ -5,7 +5,6 @@ import img1 from "../Assets/pngegg.png";
 import img2 from "../Assets/securuty.png";
 import img3 from "../Assets/homeFoto.png";
 import img4 from "../Assets/dataAnalytics.png";
-import { Link } from "react-router-dom";
 
 export default function Home() {
   const text1 = "NeoCoin la mejor manera de comprar cripto";

@@ -4,7 +4,7 @@ import Footer from './Footer';
 
 const Layout = ({ children }) => {
   return (
-    <div className="grid min-h-screen auto-rows-auto">
+    <div className="">
 
       <Navbar />
       <div className='navSmallScreenDiv'> </div>

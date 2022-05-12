@@ -6,10 +6,13 @@ import imgJulian from "../Assets/julianmarc.jpg";
 import imgMartin from "../Assets/martincastro.jpg";
 import imgMike from "../Assets/miguelbriceno.jpg";
 import imgEdu from "../Assets/edufalcon.webp";
+import imgLinkedIn from "../Assets/linked-in-alt.svg"
+import imgGithub from "../Assets/github-dark.svg"
 import imgSlider from "../Assets/imgSlider.png";
+import "../CSS/SliderCard.css"
 
 import { ArrowForwardIcon, ArrowBackIcon } from "@chakra-ui/icons";
-import { SliderMobil } from "./SliderMobil";
+
 
 export default function SliderCard() {
   const [next, setNext] = useState(1);
@@ -24,7 +27,9 @@ export default function SliderCard() {
     }, 4000);
     return () => clearInterval(interval);
   }, [next]);
+
   console.log(next);
+  
   const changeNext = () => {
     if (next === 3) {
       setNext(1);
@@ -32,6 +37,7 @@ export default function SliderCard() {
       setNext(next + 1);
     }
   };
+  
   const changeBack = () => {
     if (next === 1) {
       setNext(3);
@@ -42,30 +48,26 @@ export default function SliderCard() {
 
   console.log(next);
   return (
-    <section>
-      <div className="w-full h-screen relative flex justify-center items-center my-5 sm:py-10">
-        <img
-          src={imgSlider}
-          alt="fondo"
-          className="w-screen h-screen shadow-lg rounded-[40px]"
-        />
-        <h1 className="absolute -top-4 text-[#1A69B4] font-bold text-lg sm:text-4xl text-center px-4">
+
+      <div className="relative pt-8 shadow-2xl rounded-3xl ">
+
+        <h1 className="text-[#1A69B4] font-bold text-lg sm:text-4xl text-center px-4 pb-[5%] ">
           ¿Quiénes son los integrantes de nuestro equipo?
         </h1>
 
         {/* sm:max esto se ejecuta cuando las pantalla eas grande*/}
-        <div className="flex flex-col absolute  items-center gap-6">
-          <div className="top-1/4 right-1/3 md:top-4 md:right-8 md:absolute">
+        <div className="flex flex-col  sliderCard items-center gap-6 pb-12">
+          <div className="md:absolute md:left-[70%] md:inset-y-1/4 ">
             <button
               onClick={changeBack}
-              className=" text-[#1A69B4] font-bold py-2 px-4 rounded-full"
+              className=" text-[#1A69B4] font-bold rounded-full"
             >
               <ArrowBackIcon mt={30} w={30} h={30} boxSize={80} />
             </button>
             {/* boton de back */}
             <button
               onClick={changeNext}
-              className=" text-[#1A69B4] font-bold py-2 px-4 rounded-full"
+              className=" text-[#1A69B4] font-bold rounded-full"
             >
               <ArrowForwardIcon mt={30} w={30} h={30} boxSize={80} />
             </button>
@@ -73,7 +75,7 @@ export default function SliderCard() {
           {/* las primeras cards */}
           <div
             className={
-              next === 1 ? "md:translate-x-[-200px] shadow-2xl" : "hidden"
+              next === 1 ? "md:self-start md:ml-[9%] xl:ml-[25%]" : "hidden"
             }
           >
             <UserCard
@@ -83,10 +85,12 @@ export default function SliderCard() {
               }
               imageUrl={imgPablo}
               name={"Pablo Vieyra"}
+              linkedIn={<a href="https://www.linkedin.com/in/pablo-vieyra/" target="_blank" rel="noreferrer noopener"><img alt='linkedIn' src={imgLinkedIn} width="25" /></a>}
+              github={<a href="https://github.com/pabloVieyra" target="_blank" rel="noreferrer noopener"><img alt='Github' src={imgGithub} width="30" /></a>}
             />
             {/* <-------------- 1  */}
           </div>
-          <div className={next === 1 ? "md:ml-96 shadow-2xl" : "hidden"}>
+          <div className={next === 1 ? "md:self-end xl:mr-[25%] md:mr-[9%]" : "hidden"}>
             <UserCard
               dev={"FULLSTACK DEVELOPER"}
               text={
@@ -94,13 +98,15 @@ export default function SliderCard() {
               }
               imageUrl={imgPedro}
               name={"Pedro Acosta"}
+              linkedIn={<a href="https://www.linkedin.com/in/pevacosta/" target="_blank" rel="noreferrer noopener"><img alt='linkedIn' src={imgLinkedIn} width="25" /></a>}
+              github={<a href="https://github.com/Yandalar"><img alt='Github' src={imgGithub} width="30" /></a>}
             />
             {/* <-------------- 2  */}
           </div>
           {/* las segundas cards */}
           <div
             className={
-              next === 2 ? "md:translate-x-[-200px] shadow-2xl" : "hidden"
+              next === 2 ? "md:self-start md:ml-[9%] xl:ml-[25%]" : "hidden"
             }
           >
             <UserCard
@@ -110,10 +116,12 @@ export default function SliderCard() {
               }
               imageUrl={imgMartin}
               name={"Martín Castro"}
+              linkedIn={<a href="https://www.linkedin.com/in/m-l-castro/" target="_blank" rel="noreferrer noopener"><img alt='linkedIn' src={imgLinkedIn} width="25" /></a>}
+              github={<a href="https://github.com/mlcas" target="_blank" rel="noreferrer noopener"><img alt='Github' src={imgGithub} width="30" /></a>}
             />
             {/* <-------------- 3  */}
           </div>
-          <div className={next === 2 ? "md:ml-96 shadow-2xl" : "hidden"}>
+          <div className={next === 2 ? "md:self-end xl:mr-[25%] md:mr-[9%]" : "hidden"}>
             <UserCard
               dev={"FULLSTACK TESTER"}
               text={
@@ -121,13 +129,15 @@ export default function SliderCard() {
               }
               imageUrl={imgJulian}
               name={"Julian Marc"}
+              linkedIn={<a href="https://www.linkedin.com/in/julianmarc/" target="_blank" rel="noreferrer noopener"><img alt='linkedIn' src={imgLinkedIn} width="25" /></a>}
+              github={<a href="https://github.com/R4vage" target="_blank" rel="noreferrer noopener"><img alt='Github' src={imgGithub} width="30" /></a>}
             />
             {/* <-------------- 4  */}
           </div>
           {/* las terceras cards */}
           <div
             className={
-              next === 3 ? "md:translate-x-[-200px] shadow-2xl" : "hidden"
+              next === 3 ? "md:self-start md:ml-[9%] xl:ml-[25%]" : "hidden"
             }
           >
             <UserCard
@@ -137,10 +147,12 @@ export default function SliderCard() {
               }
               imageUrl={imgEdu}
               name={"Edu Falcón"}
+              linkedIn={<a href="https://www.linkedin.com/in/eliseodev/" target="_blank" rel="noreferrer noopener"><img alt='linkedIn' src={imgLinkedIn} width="25" /></a>}
+              github={<a href="https://github.com/Eliseonop" target="_blank" rel="noreferrer noopener"><img alt='Github' src={imgGithub} width="30" /></a>}
             />
             {/* <-------------- 5  */}
           </div>
-          <div className={next === 3 ? "md:ml-96 shadow-2xl" : "hidden"}>
+          <div className={next === 3 ? "md:self-end xl:mr-[25%] md:mr-[9%]" : "hidden"}>
             <UserCard
               dev={"FRONTEND DEVELOPER"}
               text={
@@ -148,11 +160,12 @@ export default function SliderCard() {
               }
               imageUrl={imgMike}
               name={"Miguel Briceño"}
+              linkedIn={<a href="https://www.linkedin.com/in/miguelbricenodev/" target="_blank" rel="noreferrer noopener"><img alt='linkedIn' src={imgLinkedIn} width="25" /></a>}
+              github={<a href="https://www.github.com/mikejbp/" target="_blank" rel="noreferrer noopener"><img alt='Github' src={imgGithub} width="30" /></a>}
             />
             {/* <-------------- 6  */}
           </div>
         </div>
       </div>
-    </section>
   );
 }

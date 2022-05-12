@@ -17,7 +17,7 @@
   /*El esquema de colores, es mejor usar variables, por si se decide cambiar el esquema solo hay que cambiarlo acá y no a traves del sitio. Si se usa Tailwind Hay que ver como implementarlo */
   --clr-light: hsl(0, 0%, 98%); /* Color claro. Personalmente prefiero hsl/hsla para formato de colores.*/
   --clr-dark: hsl(240, 5%, 11%); /*Color oscuro*/
-  --clr-accent: hsl(210, 51%, 53%); /* Color principal o acento */
+  --clr-accent: rgb(74, 135, 196); /* Color principal o acento */
   --clr-accentLessOpaque: hsla(210, 51%, 53%, 60%);
   --clr-accentEndPoint: hsl(210, 39%, 59%); /* Color secundario. Aca coloqué una version mas clara del principal, cuando se decidan colores hay que cambiar el esquema */
   --clr-gray: #EEEEEE;

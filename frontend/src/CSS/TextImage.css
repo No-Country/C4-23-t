@@ -59,6 +59,7 @@
     justify-content: space-around;
     padding: 1em;
     width: 60vw;
+    color: blue;
   }
 
 @media (min-width:800px){

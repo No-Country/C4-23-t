@@ -5,6 +5,8 @@ import UserHomeCard from "../../Components/UserHomeCard";
 import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { TitleContext } from "../../Components/UserLayout";
+import { fetchGet, fetchData } from "../../Utils/fetchs.js";
+
 
 
 const PrivateHome = () => {
@@ -15,7 +17,7 @@ const PrivateHome = () => {
   const [coinOne, getCoinOne] = useState([])
   const [coinTwo, getCoinTwo] = useState([])
   const [coinThree, getCoinThree] = useState([])
-  const [coinOneChart, getCoinOneChart] = useState({index: [], price: [], volumes: [] })
+  const [coinOneChart, getCoinOneChart] = useState([])
   const [coinTwoChart, getCoinTwoChart] = useState([])
   const [coinThreeChart, getCoinThreeChart] = useState([])
   
@@ -24,26 +26,10 @@ const PrivateHome = () => {
   function getUrl (coinId){return "https://api.coingecko.com/api/v3/simple/price?ids=" + coinId + "&vs_currencies=ars&include_market_cap=false&include_24hr_vol=false&include_24hr_change=true"}
   //Url de gráficos, 3 array de objetos, para generar en el mejor de los casos y si todo sale bien, un gráfico con 3 lineas.
   function getChartUrl (coinId){return "https://api.coingecko.com/api/v3/coins/" + coinId + "/market_chart?vs_currency=ars&days=30&interval=daily"} 
-  const fetchGet = async (url) => { // Función fetch para cualquier URL que no sea de gráficos
-    const response = await fetch(url)
-    if (!response.ok){
-      throw new Error ("La data no está, la data se fue")
-    } else {
-      return response.json()
-    }
-  }
-  
-const fetchData = async (url) => { //Función fetch para manejar resultados obtenidos y dejarlos listos para usar en chart, google charts o cualquier poronganeitor que se desee. Coingecko no devuelve la data en un formato accesible para estas Apis, con lo cual hay que reformatear todo.
-  let data = [ ];
-  let result = await fetchGet(url);
-  data.push(['Date','price'])
-  for (const item of result.prices) {
-      data.push([new Date(item[0]) ,item[1]])}
-  return data;
-};
+
   useEffect (() => {
     fetchGet(APITrending)// Primer fetch de monedas populares
-    .then((res) => {
+  .then((res) => {
 
       //Monedas populares, sus ids y nombres
 

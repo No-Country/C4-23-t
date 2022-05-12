@@ -4,10 +4,10 @@ import SliderCard from "../Components/SliderCard";
 
 const Nosotros = () => {
   return (
-    <div>
+    <>
       <SectionAboutUs />
       <SliderCard />
-    </div>
+    </>
   );
 };
 
