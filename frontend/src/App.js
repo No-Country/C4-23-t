@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { loadUser } from "./store/actions/authActions";
+import "react-toastify/dist/ReactToastify.css";
+import "./App.css";
+import PublicRouter from "./Routes/PublicRouter";
+import PrivateRouter from "./Routes/PrivateRouter";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(loadUser());
+  }, [dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/*" element={<PublicRouter />} />
+          <Route path="/private/*" element={<PrivateRouter />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
